@@ -1,6 +1,5 @@
 'use strict'
 
-const config = require('../config')
 const pkg = require('../package.json')
 
 module.exports.showFrontpage = (request, reply) => {
