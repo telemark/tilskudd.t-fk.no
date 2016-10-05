@@ -1,0 +1,61 @@
+{
+  "name": "tilskudd.t-fk.no",
+  "description": "Løsning for søknader om tilskudd",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no",
+    "url": "https://github.com/zrrrzzt"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.6.0"
+  },
+  "scripts": {
+    "test": "standard && nsp check && tap --reporter=spec test/**/*.js",
+    "coverage": "tap test/**/*.js --coverage",
+    "coveralls": "tap --cov --coverage-report=lcov test/**/*.js && cat coverage/lcov.info | coveralls",
+    "setup": "npm install && node setup.js",
+    "standard-fix": "standard --fix",
+    "start": "node standalone.js"
+  },
+  "keywords": [
+    "tilskudd",
+    "søknadsskjema",
+    "microsite",
+    "Telemark fylkeskommune"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/telemark/tilskudd.t-fk.no.git"
+  },
+  "bugs": {
+    "url": "http://github.com/telemark/tilskudd.t-fk.no/issues"
+  },
+  "louie": {
+    "versionName": "Australian Crawl",
+    "versionVideoUrl": "https://www.youtube.com/watch?v=URgPL9AjkbQ",
+    "systemName": "tilskudd.t-fk.no"
+  },
+  "standard": {
+    "ignore": [
+      "public"
+    ]
+  },
+  "devDependencies": {
+    "coveralls": "2.11.14",
+    "nsp": "2.6.2",
+    "standard": "8.2.0",
+    "tap": "7.1.2"
+  },
+  "dependencies": {
+    "chairo": "2.2.1",
+    "handlebars": "4.0.5",
+    "hapi": "15.1.1",
+    "inert": "4.0.2",
+    "seneca": "3.2.1",
+    "vision": "4.1.0",
+    "wreck": "10.0.0"
+  }
+}
