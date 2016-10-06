@@ -8,10 +8,10 @@ const inert = require('inert')
 const server = new Hapi.Server()
 const config = require('./config')
 const tilskuddService = require('./index')
-const senecaSearch = require('./lib/seneca-search')
+const senecaPing = require('./lib/seneca-ping')
 
 server.connection({
-  port: config.OPENGOV_POLITIKK_SERVER_PORT
+  port: config.SERVER_PORT
 })
 
 const plugins = [
@@ -52,7 +52,7 @@ server.register(plugins, error => {
     }
   })
 
-  server.seneca.use(senecaSearch)
+  server.seneca.use(senecaPing)
 })
 
 module.exports.start = () => {
