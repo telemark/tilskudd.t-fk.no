@@ -1,5 +1,6 @@
 'use strict'
 
 module.exports = (input) => {
-  return input.length > 0 ? 'show-me' : 'hide-me'
+  const data = input || ''
+  return data.length > 0 ? 'show-me' : 'hide-me'
 }
