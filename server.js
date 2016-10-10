@@ -2,6 +2,8 @@
 
 const Hapi = require('hapi')
 const Chairo = require('chairo')
+const Blankie = require('blankie')
+const Scooter = require('scooter')
 const Seneca = require('seneca')()
 const vision = require('vision')
 const inert = require('inert')
@@ -10,11 +12,21 @@ const config = require('./config')
 const tilskuddService = require('./index')
 const senecaPing = require('./lib/seneca-ping')
 
+const blankieOptions = {
+  styleSrc: ['https://fonts.googleapis.com', 'https://code.getmdl.io', 'self'],
+  fontSrc: 'https://fonts.gstatic.com self',
+  scriptSrc: ['self', 'https://code.getmdl.io', 'https://piwik.service.t-fk.no', 'unsafe-inline'],
+  imgSrc: ['self', 'data:', 'https://piwik.service.t-fk.no'],
+  generateNonces: false
+}
+
 server.connection({
   port: config.SERVER_PORT
 })
 
 const plugins = [
+  {register: Scooter},
+  {register: Blankie, options: blankieOptions},
   {register: Chairo, options: {seneca: Seneca}},
   {register: vision},
   {register: inert},
