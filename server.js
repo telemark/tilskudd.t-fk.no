@@ -15,7 +15,7 @@ const senecaPing = require('./lib/seneca-ping')
 const blankieOptions = {
   styleSrc: ['https://fonts.googleapis.com', 'https://code.getmdl.io', 'self'],
   fontSrc: 'https://fonts.gstatic.com self',
-  scriptSrc: ['self', 'https://code.getmdl.io', 'https://piwik.service.t-fk.no', 'unsafe-inline'],
+  scriptSrc: ['self', 'https://code.getmdl.io', 'https://piwik.service.t-fk.no'],
   imgSrc: ['self', 'data:', 'https://piwik.service.t-fk.no'],
   generateNonces: false
 }
