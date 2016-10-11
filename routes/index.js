@@ -6,40 +6,45 @@ module.exports = [
   {
     method: 'GET',
     path: '/',
+    handler: handlers.showFrontpage,
     config: {
-      handler: handlers.showFrontpage,
+      security: true,
       description: 'Show frontpage'
     }
   },
   {
     method: 'GET',
     path: '/kontakt',
+    handler: handlers.showKontaktpage,
     config: {
-      handler: handlers.showKontaktpage,
+      security: true,
       description: 'Show kontaktpage'
     }
   },
   {
     method: 'GET',
     path: '/personvern',
+    handler: handlers.showPersonvernpage,
     config: {
-      handler: handlers.showPersonvernpage,
+      security: true,
       description: 'Show personvernpage'
     }
   },
   {
     method: 'GET',
     path: '/veileder',
+    handler: handlers.showVeilederpage,
     config: {
-      handler: handlers.showVeilederpage,
+      security: true,
       description: 'Show veilederpage'
     }
   },
   {
     method: 'GET',
     path: '/logout',
+    handler: handlers.doLogout,
     config: {
-      handler: handlers.doLogout,
+      security: true,
       description: 'Logout'
     }
   }
