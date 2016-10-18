@@ -4,12 +4,17 @@ const Hapi = require('hapi')
 const Chairo = require('chairo')
 const Blankie = require('blankie')
 const Scooter = require('scooter')
+const Yar = require('yar')
+const hapiAuthCookie = require('hapi-auth-cookie')
+const hapiAuthJwt2 = require('hapi-auth-jwt2')
 const Seneca = require('seneca')()
 const vision = require('vision')
 const inert = require('inert')
 const server = new Hapi.Server()
 const config = require('./config')
 const tilskuddService = require('./index')
+const validateSession = require('./lib/validate-session')
+const validateApi = require('./lib/validate-api')
 const senecaPing = require('./lib/seneca-ping')
 
 const blankieOptions = {
@@ -20,6 +25,15 @@ const blankieOptions = {
   generateNonces: false
 }
 
+const yarOptions = {
+  storeBlank: false,
+  cookieOptions: {
+    password: config.YAR_SECRET,
+    isSecure: false,
+    isSameSite: 'Lax'
+  }
+}
+
 server.connection({
   port: config.SERVER_PORT
 })
@@ -27,10 +41,12 @@ server.connection({
 const plugins = [
   {register: Scooter},
   {register: Blankie, options: blankieOptions},
+  {register: Yar, options: yarOptions},
   {register: Chairo, options: {seneca: Seneca}},
   {register: vision},
   {register: inert},
-  {register: tilskuddService}
+  {register: hapiAuthCookie},
+  {register: hapiAuthJwt2}
 ]
 
 server.register(plugins, error => {
@@ -64,8 +80,40 @@ server.register(plugins, error => {
     }
   })
 
+  server.auth.strategy('session', 'cookie', {
+    password: config.COOKIE_SECRET,
+    cookie: 'tilskudd-session',
+    validateFunc: validateSession,
+    redirectTo: config.AUTH_LOGIN_URL,
+    isSecure: false,
+    isSameSite: 'Lax'
+  })
+
+  server.auth.default('session')
+
+  server.auth.strategy('jwt', 'jwt', {
+    key: config.JWT_SECRET,          // Never Share your secret key
+    validateFunc: validateApi,            // validate function defined above
+    verifyOptions: { algorithms: [ 'HS256' ] } // pick a strong algorithm
+  })
+
+  registerRoutes()
+
   server.seneca.use(senecaPing)
 })
+
+function registerRoutes () {
+  server.register([
+    {
+      register: tilskuddService,
+      options: {}
+    }
+  ], function (err) {
+    if (err) {
+      console.error('Failed to load a plugin:', err)
+    }
+  })
+}
 
 module.exports.start = () => {
   server.start(() => {

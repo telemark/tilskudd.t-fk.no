@@ -3,5 +3,10 @@
 const envs = process.env
 
 module.exports = {
-  SERVER_PORT: envs.TILSKUDD_SERVER_PORT || 8000
+  SERVER_PORT: envs.TILSKUDD_SERVER_PORT || 8000,
+  COOKIE_SECRET: envs.TILSKUDD_COOKIE_SECRET || 'Louie Louie, oh no, I got to go. Louie Louie, oh no, I got to go',
+  JWT_SECRET: envs.TILSKUDD_JWT_SECRET || 'Louie Louie, oh no, I got to go. Louie Louie, oh no, I got to go',
+  YAR_SECRET: envs.TILSKUDD_YAR_SECRET || 'Louie Louie, oh no, I got to go. Louie Louie, oh no, I got to go',
+  AUTH_LOGIN_URL: envs.TILSKUDD_AUTH_LOGIN_URL || '/login',
+  AUTH_LOGOUT_URL: envs.TILSKUDD_AUTH_LOGOUT_URL || '/logout'
 }

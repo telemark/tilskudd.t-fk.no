@@ -8,6 +8,7 @@ module.exports = [
     path: '/',
     handler: handlers.showFrontpage,
     config: {
+      auth: false,
       security: true,
       description: 'Show frontpage'
     }
@@ -17,6 +18,7 @@ module.exports = [
     path: '/kontakt',
     handler: handlers.showKontaktpage,
     config: {
+      auth: false,
       security: true,
       description: 'Show kontaktpage'
     }
@@ -26,6 +28,7 @@ module.exports = [
     path: '/personvern',
     handler: handlers.showPersonvernpage,
     config: {
+      auth: false,
       security: true,
       description: 'Show personvernpage'
     }
@@ -35,6 +38,7 @@ module.exports = [
     path: '/veileder',
     handler: handlers.showVeilederpage,
     config: {
+      auth: false,
       security: true,
       description: 'Show veilederpage'
     }
@@ -44,6 +48,7 @@ module.exports = [
     path: '/logout',
     handler: handlers.doLogout,
     config: {
+      auth: false,
       security: true,
       description: 'Logout'
     }

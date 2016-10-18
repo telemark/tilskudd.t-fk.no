@@ -8,6 +8,7 @@ module.exports = [
     path: '/test/ping',
     handler: handler.testPing,
     config: {
+      auth: false,
       security: true,
       description: 'Show ping'
     }
