@@ -19,7 +19,7 @@
     "setup": "npm install && node setup.js",
     "standard-fix": "standard --fix",
     "start": "node standalone.js",
-    "start-dev": "NODE_ENV=development && node standalone.js"
+    "start-dev": "NODE_ENV=development node standalone.js"
   },
   "keywords": [
     "tilskudd",

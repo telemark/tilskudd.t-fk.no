@@ -52,5 +52,15 @@ module.exports = [
       security: true,
       description: 'Show part for contactperson'
     }
+  },
+  {
+    method: 'GET',
+    path: '/goal',
+    handler: handler.getPartGoal,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for goal'
+    }
   }
 ]

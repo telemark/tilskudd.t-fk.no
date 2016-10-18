@@ -8,6 +8,7 @@ const getSkipSteps = require('../lib/get-skip-steps')
 module.exports.getNextStep = (request, reply) => {
   const payload = request.payload
   const yar = request.yar
+
   if (payload) {
     var completedSteps = yar.get('completedSteps') || []
     completedSteps.push(payload.stepName)
@@ -82,4 +83,17 @@ module.exports.getPartKontaktperson = (request, reply) => {
   }
 
   reply.view('kontaktperson', viewOptions)
+}
+
+module.exports.getPartGoal = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('goal', viewOptions)
 }

@@ -1,0 +1,36 @@
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--3-col"></div>
+    <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-color-text--black">
+            <h1 class="margin-bottom-10">Formål</h1>
+        </div>
+        <form action="/next" method="post">
+            <input type="hidden" name="stepName" value="goal">
+            <div class="mdl-card__supporting-text mdl-color-text--black">
+                <div class="mdl-typography--headline">Hva er formålet med tiltaket?</div>
+                <label for="goalCheck01" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="goal" value="Bedre psykisk helse" id="goalCheck01" class="mdl-checkbox__input">
+                    <span class="mdl-checkbox__label">Bedre psykisk helse</span>
+                </label><br/>
+                <label for="goalCheck02" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="goal" value="Økt fysisk aktivitet" id="goalCheck02" class="mdl-checkbox__input">
+                    <span class="mdl-checkbox__label">Økt fysisk aktivitet</span>
+                </label><br/>
+                <label for="goalCheck03" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="goal" value="Sosiale møteplasser" id="goalCheck03" class="mdl-checkbox__input">
+                    <span class="mdl-checkbox__label">Sosiale møteplasser</span>
+                </label><br/>
+                <label for="goalCheck04" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="goal" value="Forebyggende og helsefremmende opplysningsarbeid" id="goalCheck04" class="mdl-checkbox__input">
+                    <span class="mdl-checkbox__label">Forebyggende og helsefremmende opplysningsarbeid</span>
+                </label><br/>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a href="/previous" title="Gå til forrige punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Forrige</a>
+                <div class="mdl-layout-spacer"></div>
+                <button type="submit" title="Gå til neste punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Neste</button>
+            </div>
+        </form>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col"></div>
+</div>
