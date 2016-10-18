@@ -163,6 +163,19 @@ module.exports.getPartSeover = (request, reply) => {
   reply.view('seover', viewOptions)
 }
 
+module.exports.getPartFinanser = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('finanser', viewOptions)
+}
+
 module.exports.doCleanup = (request, reply) => {
   const yar = request.yar
 
