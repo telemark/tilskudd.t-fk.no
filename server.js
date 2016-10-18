@@ -29,7 +29,7 @@ const yarOptions = {
   storeBlank: false,
   cookieOptions: {
     password: config.YAR_SECRET,
-    isSecure: false,
+    isSecure: process.env.NODE_ENV !== 'development',
     isSameSite: 'Lax'
   }
 }
@@ -85,7 +85,7 @@ server.register(plugins, error => {
     cookie: 'tilskudd-session',
     validateFunc: validateSession,
     redirectTo: config.AUTH_LOGIN_URL,
-    isSecure: false,
+    isSecure: process.env.NODE_ENV !== 'development',
     isSameSite: 'Lax'
   })
 
