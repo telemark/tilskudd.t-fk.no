@@ -1,0 +1,44 @@
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--3-col"></div>
+    <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-color-text--black">
+            <h1 class="margin-bottom-10">Målgruppe</h1>
+        </div>
+        <form action="/next" method="post">
+            <input type="hidden" name="stepName" value="target">
+            <div class="mdl-card__supporting-text mdl-color-text--black">
+                <div class="mdl-typography--headline">Hvem er målgruppen for tiltaket?</div>
+                <label for="targetCheck01" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="target" value="Alle (innbyggere i Telemark)" id="targetCheck01" class="mdl-checkbox__input">
+                    <span class="mdl-checkbox__label">Alle (innbyggere i Telemark)</span>
+                </label><br/>
+                <label for="targetCheck02" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="target" value="Funksjonshemmede barn og unge opp til 18 år" id="targetCheck02" class="mdl-checkbox__input">
+                    <span class="mdl-checkbox__label">Funksjonshemmede barn og unge opp til 18 år</span>
+                </label><br/>
+                <label for="targetCheck03" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="target" value="Funksjonshemmede eldre" id="targetCheck03" class="mdl-checkbox__input">
+                    <span class="mdl-checkbox__label">Funksjonshemmede eldre</span>
+                </label><br/>
+                <label for="targetCheck04" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="target" value="Funksjonshemmede over 18 år" id="targetCheck04" class="mdl-checkbox__input">
+                    <span class="mdl-checkbox__label">Funksjonshemmede over 18 år</span>
+                </label><br/>
+                <label for="targetCheck05" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="target" value="Voksne over 18 år" id="targetCheck05" class="mdl-checkbox__input">
+                    <span class="mdl-checkbox__label">Voksne over 18 år</span>
+                </label><br/>
+                <label for="targetCheck06" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="target" value="Eldre (70+)" id="targetCheck06" class="mdl-checkbox__input">
+                    <span class="mdl-checkbox__label">Eldre (60+) </span>
+                </label><br/>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a href="/previous" title="Gå til forrige punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Forrige</a>
+                <div class="mdl-layout-spacer"></div>
+                <button type="submit" title="Gå til neste punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Neste</button>
+            </div>
+        </form>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col"></div>
+</div>

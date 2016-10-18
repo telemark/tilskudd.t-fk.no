@@ -97,3 +97,76 @@ module.exports.getPartGoal = (request, reply) => {
 
   reply.view('goal', viewOptions)
 }
+
+module.exports.getPartTarget = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('target', viewOptions)
+}
+
+module.exports.getPartCollaboration = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('collaboration', viewOptions)
+}
+
+module.exports.getPartPartners = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('partners', viewOptions)
+}
+
+module.exports.getPartTiltak = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('tiltak', viewOptions)
+}
+
+module.exports.getPartSeover = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('seover', viewOptions)
+}
+
+module.exports.doCleanup = (request, reply) => {
+  const yar = request.yar
+
+  yar.reset()
+
+  reply.redirect('/')
+}

@@ -62,5 +62,75 @@ module.exports = [
       security: true,
       description: 'Show part for goal'
     }
+  },
+  {
+    method: 'GET',
+    path: '/target',
+    handler: handler.getPartTarget,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for target'
+    }
+  },
+  {
+    method: 'GET',
+    path: '/collaboration',
+    handler: handler.getPartCollaboration,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for collaboration'
+    }
+  },
+  {
+    method: 'GET',
+    path: '/partners',
+    handler: handler.getPartPartners,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for partners'
+    }
+  },
+  {
+    method: 'GET',
+    path: '/finanser',
+    handler: handler.getPartFinanser,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for finanser'
+    }
+  },
+  {
+    method: 'GET',
+    path: '/tiltak',
+    handler: handler.getPartTiltak,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for tiltak'
+    }
+  },
+  {
+    method: 'GET',
+    path: '/seover',
+    handler: handler.getPartSeover,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for seover'
+    }
+  },
+  {
+    method: 'GET',
+    path: '/cleanup',
+    handler: handler.doCleanup,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Cleanup'
+    }
   }
 ]
