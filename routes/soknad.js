@@ -125,12 +125,32 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/kvittering',
+    handler: handler.getPartKvittering,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for kvittering'
+    }
+  },
+  {
+    method: 'GET',
     path: '/cleanup',
     handler: handler.doCleanup,
     config: {
       auth: false,
       security: true,
       description: 'Cleanup'
+    }
+  },
+  {
+    method: 'POST',
+    path: '/submit',
+    handler: handler.doSubmit,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Submit'
     }
   }
 ]

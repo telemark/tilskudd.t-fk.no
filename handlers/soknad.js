@@ -176,10 +176,30 @@ module.exports.getPartFinanser = (request, reply) => {
   reply.view('finanser', viewOptions)
 }
 
+module.exports.getPartKvittering = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('finanser', viewOptions)
+}
+
 module.exports.doCleanup = (request, reply) => {
   const yar = request.yar
 
   yar.reset()
 
   reply.redirect('/')
+}
+
+module.exports.doSubmit = (request, reply) => {
+  const yar = request.yar
+
+
+  reply.redirect('/kvittering')
 }
