@@ -1,0 +1,10 @@
+queueserver:
+  image: mongo:3.3.15
+
+tilskudd_webserver:
+  image: telemark/tilskudd.t-fk.no
+  env_file: tilskudd.env
+  ports:
+    - "8000:8000"
+  links:
+   - queueserver
