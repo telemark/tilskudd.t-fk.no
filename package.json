@@ -61,6 +61,7 @@
     "jsonwebtoken": "7.1.9",
     "scooter": "4.0.0",
     "seneca": "3.2.1",
+    "tfk-seneca-queue-mongodb": "1.0.0",
     "vision": "4.1.0",
     "wreck": "10.0.0",
     "yar": "8.0.0"
