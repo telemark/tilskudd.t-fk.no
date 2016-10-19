@@ -198,8 +198,5 @@ module.exports.doCleanup = (request, reply) => {
 }
 
 module.exports.doSubmit = (request, reply) => {
-  const yar = request.yar
-
-
   reply.redirect('/kvittering')
 }
