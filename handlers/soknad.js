@@ -186,7 +186,7 @@ module.exports.getPartKvittering = (request, reply) => {
     logoutUrl: config.AUTH_LOGOUT_URL
   }
 
-  reply.view('finanser', viewOptions)
+  reply.view('kvittering', viewOptions)
 }
 
 module.exports.doCleanup = (request, reply) => {
