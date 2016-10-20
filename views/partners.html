@@ -1,32 +1,18 @@
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--3-col"></div>
-    <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp">
-        <div class="mdl-card__title mdl-color-text--black">
-            <h1 class="margin-bottom-10">Samarbeidspartnere</h1>
+<div class="row">
+    <h1>Samarbeidspartnere</h1>
+    <form action="/next" method="post">
+        <input type="hidden" name="stepName" value="partners">
+        <fieldset class="fieldset">
+            <legend>Hvem samarbeider dere med?</legend>
+            <input type="checkbox" name="partner" value="offentlige aktører" id="partnersCheck01"><label
+                for="partnersCheck01">Offentlige aktører</label><br />
+            <input type="checkbox" name="partner" value="private aktører" id="partnersCheck02"><label for="partnersCheck02">Private aktører</label><br/>
+            <input type="checkbox" name="target" value="frivillige aktører" id="partnersCheck03"><label for="partnersCheck03">Frivillige aktører</label>
+        </fieldset>
+        <div class="callout clearfix">
+            <a href="/previous" title="Gå til forrige punkt i søknaden" class="button secondary float-left">Forrige</a>
+            <a href="/cleanup" title="Avbryt søknaden" class="button warning float-center">Avbryt søknaden</a>
+            <button type="submit" title="Gå til neste punkt i søknaden" class="button primary float-right">Neste</button>
         </div>
-        <form action="/next" method="post">
-            <input type="hidden" name="stepName" value="partners">
-            <div class="mdl-card__supporting-text mdl-color-text--black">
-                <div class="mdl-typography--headline">Hvem er samarbeider dere med?</div>
-                <label for="partnersCheck01" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                    <input type="checkbox" name="partner" value="offentlige aktører" id="partnersCheck01" class="mdl-checkbox__input">
-                    <span class="mdl-checkbox__label">offentlige aktører</span>
-                </label><br/>
-                <label for="partnersCheck02" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                    <input type="checkbox" name="partner" value="private aktører" id="partnersCheck02" class="mdl-checkbox__input">
-                    <span class="mdl-checkbox__label">Private aktører</span>
-                </label><br/>
-                <label for="partnersCheck03" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                    <input type="checkbox" name="target" value="frivillige aktører" id="partnersCheck03" class="mdl-checkbox__input">
-                    <span class="mdl-checkbox__label">Frivillige aktører</span>
-                </label><br/>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a href="/previous" title="Gå til forrige punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Forrige</a>
-                <div class="mdl-layout-spacer"></div>
-                <button type="submit" title="Gå til neste punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Neste</button>
-            </div>
-        </form>
-    </div>
-    <div class="mdl-cell mdl-cell--3-col"></div>
+    </form>
 </div>

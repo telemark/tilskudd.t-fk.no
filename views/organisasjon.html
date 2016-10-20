@@ -1,52 +1,38 @@
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--3-col"></div>
-    <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp">
-        <div class="mdl-card__title mdl-color-text--black">
-            <h1 class="margin-bottom-10">Organisasjonen</h1>
-        </div>
+<div class="row">
+    <h1 class="margin-bottom-10">Organisasjonen</h1>
         <form action="/next" method="post">
-            <input type="hidden" name="stepName" value="organisasjon">
-            <div class="mdl-card__supporting-text mdl-color-text--black">
-                <div class="mdl-typography--headline">Informasjon om organisasjonen</div>
-                <div class="mdl-textfield mdl-js-textfield fullWidth">
-                    <input class="mdl-textfield__input fullWidth" type="text" id="organisasjonsnummer" name="organisasjonsNummer">
-                    <label class="mdl-textfield__label fullWidth" for="organisasjonsnummer">Organisasjonsnummer</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield fullWidth">
-                    <input class="mdl-textfield__input fullWidth" type="text" id="organisasjonsnavn" name="organisasjonsNavn">
-                    <label class="mdl-textfield__label fullWidth" for="organisasjonsnavn">Hva heter organisasjonen?</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield fullWidth">
-                    <input class="mdl-textfield__input fullWidth" type="text" id="kontonummer" name="kontoNummer">
-                    <label class="mdl-textfield__label fullWidth" for="kontonummer">Kontonummer</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield fullWidth">
-                    <input class="mdl-textfield__input fullWidth" type="text" id="adresse" name="adresse">
-                    <label class="mdl-textfield__label fullWidth" for="adresse">Adresse</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield fullWidth">
-                    <input class="mdl-textfield__input fullWidth" type="text" id="kommune" name="kommune">
-                    <label class="mdl-textfield__label fullWidth" for="kommune">Kommune</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield fullWidth">
-                    <input class="mdl-textfield__input fullWidth" type="text" id="fylke" name="fylke">
-                    <label class="mdl-textfield__label fullWidth" for="fylke">Fylke</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield fullWidth">
-                    <input class="mdl-textfield__input fullWidth" type="text" id="telefonnummer" name="telefonNummer">
-                    <label class="mdl-textfield__label fullWidth" for="telefonnummer">Telefonnummer</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield fullWidth">
-                    <input class="mdl-textfield__input fullWidth" type="text" id="epost" name="epost">
-                    <label class="mdl-textfield__label fullWidth" for="epost">E-post</label>
-                </div>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a href="/previous" title="Gå til forrige punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Forrige</a>
-                <div class="mdl-layout-spacer"></div>
-                <button type="submit" title="Gå til neste punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Neste</button>
-            </div>
-        </form>
-    </div>
-    <div class="mdl-cell mdl-cell--3-col"></div>
+        <input type="hidden" name="stepName" value="organisasjon">
+        <fieldset class="fieldset">
+            <legend>Informasjon om organisasjonen</legend>
+            <label>Organisasjonsnummer
+                <input type="text" id="organisasjonsnummer" name="organisasjonsNummer">
+            </label>
+            <label>Hva heter organisasjonen?
+                <input type="text" id="organisasjonsnavn" name="organisasjonsNavn">
+            </label>
+            <label>Kontonummer
+                <input type="text" id="kontonummer" name="kontoNummer">
+            </label>
+            <label>Adresse
+                <input type="text" id="adresse" name="adresse">
+            </label>
+            <label>Kommune
+                <input type="text" id="kommune" name="kommune">
+            </label>
+            <label>Fylke
+                <input type="text" id="fylke" name="fylke">
+            </label>
+            <label>Telefonnummer
+                <input type="text" id="telefonnummer" name="telefonNummer">
+            </label>
+            <label>E-post
+                <input type="text" id="epost" name="epost">
+            </label>
+        </fieldset>
+        <div class="callout clearfix">
+            <a href="/previous" title="Gå til forrige punkt i søknaden" class="button secondary float-left">Forrige</a>
+            <a href="/cleanup" title="Avbryt søknaden" class="button warning float-center">Avbryt søknaden</a>
+            <button type="submit" title="Gå til neste punkt i søknaden" class="button primary float-right">Neste</button>
+        </div>
+    </form>
 </div>

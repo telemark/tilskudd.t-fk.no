@@ -1,20 +1,15 @@
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--3-col"></div>
-    <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp">
-        <div class="mdl-card__title mdl-color-text--black">
-            <h1 class="margin-bottom-10">Se over</h1>
+<div class="row">
+    <h1>Se over</h1>
+    <form action="/submit" method="post">
+        <input type="hidden" name="stepName" value="seover">
+        <fieldset class="fieldset">
+            <legend>Sjekk at alt stemmer</legend>
+            Alte ser bra ut
+        </fieldset>
+        <div class="callout clearfix">
+            <a href="/previous" title="Gå til forrige punkt i søknaden" class="button secondary float-left">Forrige</a>
+            <a href="/cleanup" title="Avbryt søknaden" class="button warning float-center">Avbryt søknaden</a>
+            <button type="submit" title="Gå til neste punkt i søknaden" class="button primary float-right">Neste</button>
         </div>
-        <form action="/submit" method="post">
-            <input type="hidden" name="stepName" value="seover">
-            <div class="mdl-card__supporting-text mdl-color-text--black">
-                Alt ser bra ut
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a href="/cleanup" title="Avbryt søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Avbryt søknaden</a>
-                <div class="mdl-layout-spacer"></div>
-                <button type="submit" title="Send inn søknad" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Send søknad</button>
-            </div>
-        </form>
-    </div>
-    <div class="mdl-cell mdl-cell--3-col"></div>
+    </form>
 </div>

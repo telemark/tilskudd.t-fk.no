@@ -1,32 +1,23 @@
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--3-col"></div>
-    <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp">
-        <div class="mdl-card__title mdl-color-text--black">
-            <h1 class="margin-bottom-10">Kontaktperson</h1>
+<div class="row">
+    <h1>Økonomi</h1>
+    <form action="/next" method="post">
+        <input type="hidden" name="stepName" value="finanser">
+        <fieldset class="fieldset">
+            <legend>Finansiering</legend>
+            <label>Totalramme
+                <input type="text" id="totalramme" name="totalRamme">
+            </label>
+            <label>Egne midler
+                <input type="text" id="egnemidler" name="egneMidler">
+            </label>
+            <label>Andre midler søkt om
+                <input type="text" id="andremidler" name="andreMidler">
+            </label>
+        </fieldset>
+        <div class="callout clearfix">
+            <a href="/previous" title="Gå til forrige punkt i søknaden" class="button secondary float-left">Forrige</a>
+            <a href="/cleanup" title="Avbryt søknaden" class="button warning float-center">Avbryt søknaden</a>
+            <button type="submit" title="Gå til neste punkt i søknaden" class="button primary float-right">Neste</button>
         </div>
-        <form action="/next" method="post">
-            <input type="hidden" name="stepName" value="finanser">
-            <div class="mdl-card__supporting-text mdl-color-text--black">
-                <div class="mdl-typography--headline">Finansiering</div>
-                <div class="mdl-textfield mdl-js-textfield fullWidth">
-                    <input class="mdl-textfield__input fullWidth" type="text" id="totalramme" name="totalRamme">
-                    <label class="mdl-textfield__label fullWidth" for="totalramme">Totalramme</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield fullWidth">
-                    <input class="mdl-textfield__input fullWidth" type="text" id="egnemidler" name="egneMidler">
-                    <label class="mdl-textfield__label fullWidth" for="egnemidler">Egne midler</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield fullWidth">
-                    <input class="mdl-textfield__input fullWidth" type="text" id="andremidler" name="andreMidler">
-                    <label class="mdl-textfield__label fullWidth" for="andremidler">Andre midler søkt om</label>
-                </div>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a href="/previous" title="Gå til forrige punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Forrige</a>
-                <div class="mdl-layout-spacer"></div>
-                <button type="submit" title="Gå til neste punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Neste</button>
-            </div>
-        </form>
-    </div>
-    <div class="mdl-cell mdl-cell--3-col"></div>
+    </form>
 </div>

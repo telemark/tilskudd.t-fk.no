@@ -1,28 +1,16 @@
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--3-col"></div>
-    <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp">
-        <div class="mdl-card__title mdl-color-text--black">
-            <h1 class="margin-bottom-10">Samarbeid</h1>
+<div class="row">
+    <h1>Samarbeid</h1>
+    <form action="/next" method="post">
+        <input type="hidden" name="stepName" value="collaboration">
+        <fieldset class="fieldset">
+            <legend>Er dette i samarbeid med andre?</legend>
+            <input type="radio" name="samarbeid" value="ja" id="collaborationRadio01" required><label for="collaborationRadio01">Ja</label>
+            <input type="radio" name="samarbeid" value="nei" id="collaborationRadio02"><label for="collaborationRadio02">Nei</label>
+        </fieldset>
+        <div class="callout clearfix">
+            <a href="/previous" title="Gå til forrige punkt i søknaden" class="button secondary float-left">Forrige</a>
+            <a href="/cleanup" title="Avbryt søknaden" class="button warning float-center">Avbryt søknaden</a>
+            <button type="submit" title="Gå til neste punkt i søknaden" class="button primary float-right">Neste</button>
         </div>
-        <form action="/next" method="post">
-            <input type="hidden" name="stepName" value="collaboration">
-            <div class="mdl-card__supporting-text mdl-color-text--black">
-                <div class="mdl-typography--headline">Er dette i samarbeid med andre?</div>
-                <label for="collaborationRadio01" class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-                    <input type="radio" name="samarbeid" value="ja" id="collaborationRadio01" class="mdl-radio__button">
-                    <span class="mdl-radio__label">Ja</span>
-                </label><br/>
-                <label for="collaborationRadio02" class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-                    <input type="radio" name="samarbeid" value="nei" id="collaborationRadio02" class="mdl-radio__button">
-                    <span class="mdl-radio__label">Nei</span>
-                </label><br/>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a href="/previous" title="Gå til forrige punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Forrige</a>
-                <div class="mdl-layout-spacer"></div>
-                <button type="submit" title="Gå til neste punkt i søknaden" class="mdl-button mdl-js-button mdl-color-text--black fontBiggerButton">Neste</button>
-            </div>
-        </form>
-    </div>
-    <div class="mdl-cell mdl-cell--3-col"></div>
+    </form>
 </div>
