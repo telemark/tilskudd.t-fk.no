@@ -10,12 +10,14 @@ const hapiAuthJwt2 = require('hapi-auth-jwt2')
 const Seneca = require('seneca')()
 const vision = require('vision')
 const inert = require('inert')
+const senecaQueue = require('tfk-seneca-queue-mongodb')
 const server = new Hapi.Server()
 const config = require('./config')
 const tilskuddService = require('./index')
 const validateSession = require('./lib/validate-session')
 const validateApi = require('./lib/validate-api')
 const senecaPing = require('./lib/seneca-ping')
+const senecaHub = require('./lib/seneca-hub')
 
 const blankieOptions = {
   styleSrc: ['https://fonts.googleapis.com', 'https://code.getmdl.io', 'self'],
@@ -100,6 +102,8 @@ server.register(plugins, error => {
   registerRoutes()
 
   server.seneca.use(senecaPing)
+  server.seneca.use(senecaHub)
+  server.seneca.use(senecaQueue, {MONGODB_URI: config.QUEUE_SERVER})
 })
 
 function registerRoutes () {

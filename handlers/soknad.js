@@ -198,5 +198,7 @@ module.exports.doCleanup = (request, reply) => {
 }
 
 module.exports.doSubmit = (request, reply) => {
+  const document = request.yar
+  request.seneca.act({role: 'queue', cmd: 'add', data: document})
   reply.redirect('/kvittering')
 }
