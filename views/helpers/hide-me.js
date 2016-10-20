@@ -2,5 +2,5 @@
 
 module.exports = (input) => {
   const data = input || ''
-  return data.length > 0 ? 'hide-me' : 'show-me'
+  return data.length > 0 ? 'invisible' : 'show-me'
 }
