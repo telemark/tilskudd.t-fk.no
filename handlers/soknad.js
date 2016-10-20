@@ -151,13 +151,15 @@ module.exports.getPartTiltak = (request, reply) => {
 }
 
 module.exports.getPartSeover = (request, reply) => {
+  const yar = request.yar
   const viewOptions = {
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
     systemName: pkg.louie.systemName,
     githubUrl: pkg.repository.url,
-    logoutUrl: config.AUTH_LOGOUT_URL
+    logoutUrl: config.AUTH_LOGOUT_URL,
+    document: yar._store
   }
 
   reply.view('seover', viewOptions)
@@ -177,14 +179,19 @@ module.exports.getPartFinanser = (request, reply) => {
 }
 
 module.exports.getPartKvittering = (request, reply) => {
+  const yar = request.yar
+  const document = JSON.parse(JSON.stringify(yar._store))
   const viewOptions = {
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
     systemName: pkg.louie.systemName,
     githubUrl: pkg.repository.url,
-    logoutUrl: config.AUTH_LOGOUT_URL
+    logoutUrl: config.AUTH_LOGOUT_URL,
+    document: document
   }
+
+  yar.reset()
 
   reply.view('kvittering', viewOptions)
 }
@@ -198,7 +205,8 @@ module.exports.doCleanup = (request, reply) => {
 }
 
 module.exports.doSubmit = (request, reply) => {
-  const document = request.yar
+  const yar = request.yar
+  const document = yar._store
   request.seneca.act({role: 'queue', cmd: 'add', data: document})
   reply.redirect('/kvittering')
 }
