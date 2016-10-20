@@ -11,3 +11,38 @@
         display: none;
     }
 }
+
+html, body {
+    font-family: "Georgia", "Times", "Times New Roman", serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Gill Sans", "Arial", sans-serif;
+}
+
+.top-bar, .top-bar ul {
+    background-color: #ffd520;
+}
+
+.menu > li > a {
+    color: black;
+}
+
+.menu > li > a:hover {
+    color: #007f7a;
+}
+
+.button.primary {
+    background-color: #cceff4;
+    color: black;
+}
+
+.button.secondary {
+    background-color: #ededed;
+    color: black;
+}
+
+.button.alert {
+    background-color: #e30438;
+    color: white;
+}
