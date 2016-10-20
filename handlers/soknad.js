@@ -152,6 +152,7 @@ module.exports.getPartTiltak = (request, reply) => {
 
 module.exports.getPartSeover = (request, reply) => {
   const yar = request.yar
+  const document = yar._store
   const viewOptions = {
     version: pkg.version,
     versionName: pkg.louie.versionName,
@@ -159,7 +160,7 @@ module.exports.getPartSeover = (request, reply) => {
     systemName: pkg.louie.systemName,
     githubUrl: pkg.repository.url,
     logoutUrl: config.AUTH_LOGOUT_URL,
-    document: yar._store
+    document: JSON.stringify(document, null, 2)
   }
 
   reply.view('seover', viewOptions)
@@ -188,7 +189,7 @@ module.exports.getPartKvittering = (request, reply) => {
     systemName: pkg.louie.systemName,
     githubUrl: pkg.repository.url,
     logoutUrl: config.AUTH_LOGOUT_URL,
-    document: document
+    document: JSON.stringify(document, null, 2)
   }
 
   yar.reset()
