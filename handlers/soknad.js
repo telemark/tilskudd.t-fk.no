@@ -124,6 +124,19 @@ module.exports.getPartCollaboration = (request, reply) => {
   reply.view('collaboration', viewOptions)
 }
 
+module.exports.getPartArtform = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('artform', viewOptions)
+}
+
 module.exports.getPartPartners = (request, reply) => {
   const viewOptions = {
     version: pkg.version,

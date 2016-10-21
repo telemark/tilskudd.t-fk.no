@@ -85,6 +85,16 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/artform',
+    handler: handler.getPartArtform,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for artform'
+    }
+  },
+  {
+    method: 'GET',
     path: '/partners',
     handler: handler.getPartPartners,
     config: {
