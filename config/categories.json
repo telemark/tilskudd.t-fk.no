@@ -1,0 +1,34 @@
+{
+  "Billedkunst": [
+    "Utstilling",
+    "Seminar",
+    "Publikasjon"
+  ],
+  "Litteratur": [
+    "Festival",
+    "Publikasjon"
+  ],
+  "Film": [
+    "Film",
+    "Festival"
+  ],
+  "Scenekunst": [
+    "Teater",
+    "Dans",
+    "Forestilling",
+    "Workshop",
+    "Involvering av barn og unge",
+    "Talentutvikling"
+  ],
+  "Musikk": [
+    "Festival",
+    "Konsert",
+    "Seminar/workshop",
+    "Involvering av barn og unge",
+    "Talentutvikling"
+  ],
+  "Kulturarv": [
+    "Seminar",
+    "Publikasjon"
+  ]
+}

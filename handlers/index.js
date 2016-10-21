@@ -50,6 +50,18 @@ module.exports.showVeilederpage = (request, reply) => {
   reply.view('veileder', viewOptions)
 }
 
+module.exports.showTilskuddpage = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url
+  }
+
+  reply.view('tilskudd', viewOptions)
+}
+
 module.exports.doLogout = (request, reply) => {
   const viewOptions = {
     version: pkg.version,

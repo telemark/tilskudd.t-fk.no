@@ -45,6 +45,16 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/tilskudd',
+    handler: handlers.showTilskuddpage,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show tilskuddpage'
+    }
+  },
+  {
+    method: 'GET',
     path: '/logout',
     handler: handlers.doLogout,
     config: {
