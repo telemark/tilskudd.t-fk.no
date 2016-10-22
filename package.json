@@ -64,6 +64,6 @@
     "tfk-seneca-queue-mongodb": "1.0.0",
     "vision": "4.1.0",
     "wreck": "10.0.0",
-    "yar": "8.0.0"
+    "yar": "8.1.0"
   }
 }
