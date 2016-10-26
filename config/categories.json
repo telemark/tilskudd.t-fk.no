@@ -1,34 +1,94 @@
 {
   "Billedkunst": [
-    "Utstilling",
-    "Seminar",
-    "Publikasjon"
+    {
+      "id":"101",
+      "description": "Utstilling"
+    },
+    {
+      "id":"102",
+      "description": "Seminar"
+    },
+    {
+      "id":"103",
+      "description": "Publikasjon"
+    }
   ],
   "Litteratur": [
-    "Festival",
-    "Publikasjon"
+    {
+      "id":"201",
+      "description": "Festival"
+    },
+    {
+      "id":"202",
+      "description": "Publikasjon"
+    }
   ],
   "Film": [
-    "Film",
-    "Festival"
+    {
+      "id":"303",
+      "description": "Film"
+    },
+    {
+      "id":"303",
+      "description": "Festival"
+    }
   ],
   "Scenekunst": [
-    "Teater",
-    "Dans",
-    "Forestilling",
-    "Workshop",
-    "Involvering av barn og unge",
-    "Talentutvikling"
+    {
+      "id":"401",
+      "description": "Teater"
+    },
+    {
+      "id":"402",
+      "description": "Dans"
+    },
+    {
+      "id":"403",
+      "description": "Forestilling"
+    },
+    {
+      "id":"404",
+      "description": "Workshop"
+    },
+    {
+      "id":"405",
+      "description": "Involvering av barn og unge"
+    },
+    {
+      "id":"406",
+      "description": "Talentutvikling"
+    }
   ],
   "Musikk": [
-    "Festival",
-    "Konsert",
-    "Seminar/workshop",
-    "Involvering av barn og unge",
-    "Talentutvikling"
+    {
+      "id":"501",
+      "description": "Festival"
+    },
+    {
+      "id":"502",
+      "description": "Konsert"
+    },
+    {
+      "id":"503",
+      "description": "Seminar/workshop"
+    },
+    {
+      "id":"504",
+      "description": "Involvering av barn og unge"
+    },
+    {
+      "id":"505",
+      "description": "Talentutvikling"
+    }
   ],
   "Kulturarv": [
-    "Seminar",
-    "Publikasjon"
+    {
+      "id":"601",
+      "description": "Seminar"
+    },
+    {
+      "id":"602",
+      "description": "Publikasjon"
+    }
   ]
 }

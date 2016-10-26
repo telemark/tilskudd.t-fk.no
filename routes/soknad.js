@@ -95,6 +95,26 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/kategorier',
+    handler: handler.getPartKategorier,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for kategorier'
+    }
+  },
+  {
+    method: 'GET',
+    path: '/type',
+    handler: handler.getPartType,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for type'
+    }
+  },
+  {
+    method: 'GET',
     path: '/partners',
     handler: handler.getPartPartners,
     config: {

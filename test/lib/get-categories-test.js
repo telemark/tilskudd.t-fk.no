@@ -2,7 +2,20 @@
 
 const tap = require('tap')
 const getCategories = require('../../lib/get-categories')
-const expectedCategories = ['Utstilling', 'Seminar', 'Publikasjon']
+const expectedCategories = [
+  {
+    'id': '101',
+    'description': 'Utstilling'
+  },
+  {
+    'id': '102',
+    'description': 'Seminar'
+  },
+  {
+    'id': '103',
+    'description': 'Publikasjon'
+  }
+]
 
 tap.ok(getCategories, 'get-categories loads OK')
 

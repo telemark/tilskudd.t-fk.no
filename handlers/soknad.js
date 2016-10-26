@@ -2,6 +2,7 @@
 
 const config = require('../config')
 const pkg = require('../package.json')
+const getCategories = require('../lib/get-categories')
 const getNextForm = require('../lib/get-next-form')
 const getSkipSteps = require('../lib/get-skip-steps')
 
@@ -135,6 +136,36 @@ module.exports.getPartArtform = (request, reply) => {
   }
 
   reply.view('artform', viewOptions)
+}
+
+module.exports.getPartKategorier = (request, reply) => {
+  const yar = request.yar
+  const artform = yar.get('artform')
+  const categories = getCategories(artform.artform)
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL,
+    categories: categories
+  }
+
+  reply.view('kategorier', viewOptions)
+}
+
+module.exports.getPartType = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('type', viewOptions)
 }
 
 module.exports.getPartPartners = (request, reply) => {
