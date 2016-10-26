@@ -1,12 +1,12 @@
 <div class="row">
-    <h1><Kategori/h1>
+    <h1>Kategori</h1>
     <form action="/next" method="post">
         <input type="hidden" name="stepName" value="kategorier">
         <fieldset class="fieldset">
             <legend>Hva beskriver tiltaket best?</legend>
-            {{#each category}}
+            {{#each categories}}
             <input type="checkbox" name="kategorier" value="{{description}}" id="kategorierCheck{{id}}"><label
-                for="kategorierCheck{{id}}">Alle (innbyggere i Telemark)</label><br/>
+                for="kategorierCheck{{id}}">{{description}}</label><br/>
             {{/each}}
         </fieldset>
         <div class="expanded button-group">
