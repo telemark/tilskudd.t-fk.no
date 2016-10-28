@@ -4,6 +4,7 @@ const Hapi = require('hapi')
 const Chairo = require('chairo')
 const Blankie = require('blankie')
 const Scooter = require('scooter')
+const Good = require('good')
 const Yar = require('yar')
 const hapiAuthCookie = require('hapi-auth-cookie')
 const hapiAuthJwt2 = require('hapi-auth-jwt2')
@@ -36,6 +37,21 @@ const yarOptions = {
   }
 }
 
+const goodOptions = {
+  ops: {
+    interval: 900000
+  },
+  reporters: {
+    console: [{
+      module: 'good-squeeze',
+      name: 'Squeeze',
+      args: [{ log: '*', ops: '*', error: '*', response: '*'}]
+    }, {
+      module: 'good-console'
+    }, 'stdout']
+  }
+}
+
 server.connection({
   port: config.SERVER_PORT
 })
@@ -44,6 +60,7 @@ const plugins = [
   {register: Scooter},
   {register: Blankie, options: blankieOptions},
   {register: Yar, options: yarOptions},
+  {register: Good, options: goodOptions},
   {register: Chairo, options: {seneca: Seneca}},
   {register: vision},
   {register: inert},
