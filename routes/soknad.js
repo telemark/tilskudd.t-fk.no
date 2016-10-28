@@ -55,12 +55,12 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/goal',
-    handler: handler.getPartGoal,
+    path: '/formal',
+    handler: handler.getPartFormal,
     config: {
       auth: false,
       security: true,
-      description: 'Show part for goal'
+      description: 'Show part for formal'
     }
   },
   {
@@ -105,12 +105,22 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/type',
-    handler: handler.getPartType,
+    path: '/kategorierfolkehelse',
+    handler: handler.getPartKategorierFolkehelse,
     config: {
       auth: false,
       security: true,
-      description: 'Show part for type'
+      description: 'Show part for kategorierfolkehelse'
+    }
+  },
+  {
+    method: 'GET',
+    path: '/kategorieridrett',
+    handler: handler.getPartKategorierIdrett,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for kategorieridrett'
     }
   },
   {

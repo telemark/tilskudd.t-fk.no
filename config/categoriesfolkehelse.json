@@ -1,0 +1,18 @@
+[
+  {
+    "id":"101",
+    "description": "Bedre psykisk helse"
+  },
+  {
+    "id":"102",
+    "description": "Økt fysisk aktivitet"
+  },
+  {
+    "id":"103",
+    "description": "Inkluderende møteplasser"
+  },
+  {
+    "id":"104",
+    "description": "Annet folkehelsearbeid"
+  }
+]

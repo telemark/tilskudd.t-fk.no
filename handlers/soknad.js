@@ -2,6 +2,8 @@
 
 const config = require('../config')
 const pkg = require('../package.json')
+const categoriesFolkehelse = require('../config/categoriesfolkehelse.json')
+const categoriesIdrett = require('../config/categoriesidrett.json')
 const getCategories = require('../lib/get-categories')
 const getNextForm = require('../lib/get-next-form')
 const getSkipSteps = require('../lib/get-skip-steps')
@@ -86,7 +88,7 @@ module.exports.getPartKontaktperson = (request, reply) => {
   reply.view('kontaktperson', viewOptions)
 }
 
-module.exports.getPartGoal = (request, reply) => {
+module.exports.getPartFormal = (request, reply) => {
   const viewOptions = {
     version: pkg.version,
     versionName: pkg.louie.versionName,
@@ -96,7 +98,7 @@ module.exports.getPartGoal = (request, reply) => {
     logoutUrl: config.AUTH_LOGOUT_URL
   }
 
-  reply.view('goal', viewOptions)
+  reply.view('formal', viewOptions)
 }
 
 module.exports.getPartTarget = (request, reply) => {
@@ -155,17 +157,32 @@ module.exports.getPartKategorier = (request, reply) => {
   reply.view('kategorier', viewOptions)
 }
 
-module.exports.getPartType = (request, reply) => {
+module.exports.getPartKategorierFolkehelse = (request, reply) => {
   const viewOptions = {
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
     systemName: pkg.louie.systemName,
     githubUrl: pkg.repository.url,
-    logoutUrl: config.AUTH_LOGOUT_URL
+    logoutUrl: config.AUTH_LOGOUT_URL,
+    categories: categoriesFolkehelse
   }
 
-  reply.view('type', viewOptions)
+  reply.view('kategorierfolkehelse', viewOptions)
+}
+
+module.exports.getPartKategorierIdrett = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL,
+    categories: categoriesIdrett
+  }
+
+  reply.view('kategorierfolkehelse', viewOptions)
 }
 
 module.exports.getPartPartners = (request, reply) => {
