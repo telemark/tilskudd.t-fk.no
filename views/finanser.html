@@ -2,19 +2,20 @@
     <h1>Økonomi</h1>
     <form action="/next" method="post">
         <input type="hidden" name="stepName" value="finanser">
+        Forenklet budsjettoversikt. Fyll inn tall i hele kroner.
         <fieldset class="fieldset">
             <legend>Finansiering</legend>
-            <label>Søker om støtte
-                <input type="text" id="soknadssum" name="soknadsSum" required>
+            <label>Søkebeløp
+                <input type="number" id="soknadssum" name="soknadsSum" required>
             </label>
-            <label>Totalramme
-                <input type="text" id="totalramme" name="totalRamme" required>
+            <label>Total kostnadsramme
+                <input type="number" id="totalramme" name="totalRamme" required>
             </label>
             <label>Egne midler
-                <input type="text" id="egnemidler" name="egneMidler" required>
+                <input type="number" id="egnemidler" name="egneMidler" required>
             </label>
-            <label>Andre midler søkt om
-                <input type="text" id="andremidler" name="andreMidler" required>
+            <label>Andre midler (søkt om eller innvilget)
+                <input type="number" id="andremidler" name="andreMidler" required>
             </label>
         </fieldset>
         <div class="expanded button-group">
