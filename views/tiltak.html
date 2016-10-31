@@ -5,13 +5,13 @@
         <fieldset class="fieldset">
             <legend>Litt om tiltaket/arrangementet</legend>
             <label>Navn på tiltaket/arrangementet
-                <input type="text" id="navn" name="navn" required>
+                <input type="text" id="navn" name="navn" value="{{data.navn}}" required>
             </label>
             <label>Beskrivelse av tiltaket/arrangementet
-                <textarea id="beskrivelse" name="beskrivelse" required maxlength="1000"></textarea>
+                <textarea id="beskrivelse" name="beskrivelse" required maxlength="1000">{{data.beskrivelse}}</textarea>
             </label>
             <label>Hvor arrangeres det?
-                <input type="text" id="hvor" name="hvor" required>
+                <input type="text" id="hvor" name="hvor" value="{{data.hvor}}" required>
             </label>
             <label>Startdato
                 <input type="date" id="startdato" name="startdato" required>
