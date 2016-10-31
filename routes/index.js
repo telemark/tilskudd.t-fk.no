@@ -15,12 +15,32 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/start',
+    handler: handlers.start,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Setup start'
+    }
+  },
+  {
+    method: 'GET',
     path: '/kontakt',
     handler: handlers.showKontaktpage,
     config: {
       auth: false,
       security: true,
       description: 'Show kontaktpage'
+    }
+  },
+  {
+    method: 'GET',
+    path: '/ikkefunnet',
+    handler: handlers.showIkkefunnetpage,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show ikkefunnet'
     }
   },
   {
