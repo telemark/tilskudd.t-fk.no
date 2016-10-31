@@ -73,7 +73,10 @@ module.exports.getPartKontaktperson = (request, reply) => {
 }
 
 module.exports.getPartFormal = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('formal') || {}
   const viewOptions = {
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -86,7 +89,10 @@ module.exports.getPartFormal = (request, reply) => {
 }
 
 module.exports.getPartTarget = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('target') || {}
   const viewOptions = {
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -99,7 +105,10 @@ module.exports.getPartTarget = (request, reply) => {
 }
 
 module.exports.getPartCollaboration = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('collaboration') || {}
   const viewOptions = {
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -112,7 +121,10 @@ module.exports.getPartCollaboration = (request, reply) => {
 }
 
 module.exports.getPartArtform = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('artform') || {}
   const viewOptions = {
+    data:data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -127,8 +139,10 @@ module.exports.getPartArtform = (request, reply) => {
 module.exports.getPartKategorier = (request, reply) => {
   const yar = request.yar
   const artform = yar.get('artform')
+  const data = yar.get('kategorier') || {}
   const categories = getCategories(artform.artform)
   const viewOptions = {
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -142,7 +156,10 @@ module.exports.getPartKategorier = (request, reply) => {
 }
 
 module.exports.getPartKategorierFolkehelse = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('kategorierfolkehelse') || {}
   const viewOptions = {
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -156,7 +173,10 @@ module.exports.getPartKategorierFolkehelse = (request, reply) => {
 }
 
 module.exports.getPartKategorierIdrett = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('kategorieridrett') || {}
   const viewOptions = {
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -170,7 +190,10 @@ module.exports.getPartKategorierIdrett = (request, reply) => {
 }
 
 module.exports.getPartPartners = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('partners') || {}
   const viewOptions = {
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -183,7 +206,10 @@ module.exports.getPartPartners = (request, reply) => {
 }
 
 module.exports.getPartTiltak = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('tiltak') || {}
   const viewOptions = {
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -212,7 +238,10 @@ module.exports.getPartSeover = (request, reply) => {
 }
 
 module.exports.getPartFinanser = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('finanser') || {}
   const viewOptions = {
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
