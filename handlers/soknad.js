@@ -120,6 +120,23 @@ module.exports.getPartCollaboration = (request, reply) => {
   reply.view('collaboration', viewOptions)
 }
 
+module.exports.getPartSamarbeidsparter = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('samarbeidsparter') || {}
+  const viewOptions = {
+    data: data,
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('samarbeidsparter', viewOptions)
+}
+
+
 module.exports.getPartArtform = (request, reply) => {
   const yar = request.yar
   const data = yar.get('artform') || {}
