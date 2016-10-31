@@ -136,12 +136,11 @@ module.exports.getPartSamarbeidsparter = (request, reply) => {
   reply.view('samarbeidsparter', viewOptions)
 }
 
-
 module.exports.getPartArtform = (request, reply) => {
   const yar = request.yar
   const data = yar.get('artform') || {}
   const viewOptions = {
-    data:data,
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
