@@ -3,7 +3,7 @@
 const tap = require('tap')
 const handlers = require('../../handlers')
 
-tap.equal(Object.keys(handlers).length, 6, 'There are 6 standard handlers')
+tap.equal(Object.keys(handlers).length, 8, 'There are 8 standard handlers')
 
 tap.ok(handlers.showFrontpage, 'Handler has method showFrontpage')
 

@@ -80,6 +80,7 @@ module.exports.showIkkefunnetpage = (request, reply) => {
 }
 
 module.exports.start = (request, reply) => {
+  const yar = request.yar
   const receivedToken = request.query.jwt
   const jwtDecrypted = jwt.verify(receivedToken, config.JWT_SECRET)
   const data = encryptor.decrypt(jwtDecrypted.data)
@@ -114,7 +115,6 @@ module.exports.start = (request, reply) => {
 
     reply.redirect('/')
   }
-
 }
 
 module.exports.doLogout = (request, reply) => {
