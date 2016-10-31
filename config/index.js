@@ -4,6 +4,7 @@ const envs = process.env
 
 module.exports = {
   SERVER_PORT: envs.TILSKUDD_SERVER_PORT || 8000,
+  ENCRYPTOR_KEY: envs.TILSKUDD_ENCRYPTOR_KEY || 'Louie Louie, oh no, I got to go. Louie Louie, oh no, I got to go',
   COOKIE_SECRET: envs.TILSKUDD_COOKIE_SECRET || 'Louie Louie, oh no, I got to go. Louie Louie, oh no, I got to go',
   JWT_SECRET: envs.TILSKUDD_JWT_SECRET || 'Louie Louie, oh no, I got to go. Louie Louie, oh no, I got to go',
   YAR_SECRET: envs.TILSKUDD_YAR_SECRET || 'Louie Louie, oh no, I got to go. Louie Louie, oh no, I got to go',
