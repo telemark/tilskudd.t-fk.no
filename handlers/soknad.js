@@ -57,7 +57,10 @@ module.exports.getPartOrganisasjon = (request, reply) => {
 }
 
 module.exports.getPartKontaktperson = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('kontaktperson') || {}
   const viewOptions = {
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,

@@ -5,13 +5,13 @@
         <fieldset class="fieldset">
             <legend>Informasjon om deg som søker</legend>
             <label>Navn
-                <input type="text" id="navn" name="navn" required>
+                <input type="text" id="navn" name="navn" value="{{data.navn}}" required>
             </label>
             <label>Telefonnummer
-                <input type="text" id="telefonnummer" name="telefonNummer" required>
+                <input type="text" id="telefonnummer" name="telefonNummer" value="{{data.telefonNummer}}" required>
             </label>
             <label>E-post
-                <input type="text" id="epost" name="epost" required>
+                <input type="text" id="epost" name="epost" value="{{data.epost}}" required>
             </label>
         </fieldset>
         <div class="expanded button-group">
