@@ -34,28 +34,6 @@ module.exports.getPreviousStep = (request, reply) => {
   if (completedSteps) {
     const previousStep = completedSteps.pop()
     yar.set('completedSteps', completedSteps)
-
-    if (previousStep === 'skole') {
-      yar.clear('velgskole')
-      yar.clear('velgklasse')
-      yar.clear('skoleadresse')
-    }
-
-    if (previousStep === 'grunnlag') {
-      yar.clear('grunnlag')
-    }
-
-    if (previousStep === 'bosted') {
-      yar.clear('bosted')
-      yar.clear('bosteddelt')
-      yar.clear('bostedhybel')
-    }
-
-    if (previousStep === 'busskort') {
-      yar.clear('busskort')
-      yar.clear('busskortnummer')
-    }
-
     reply.redirect('/' + previousStep)
   } else {
     reply.redirect('/')
@@ -63,7 +41,10 @@ module.exports.getPreviousStep = (request, reply) => {
 }
 
 module.exports.getPartOrganisasjon = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('organisasjon') || {}
   const viewOptions = {
+    data: data,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
