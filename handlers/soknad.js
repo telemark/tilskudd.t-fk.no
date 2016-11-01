@@ -7,6 +7,7 @@ const categoriesIdrett = require('../config/categoriesidrett.json')
 const getCategories = require('../lib/get-categories')
 const getNextForm = require('../lib/get-next-form')
 const getSkipSteps = require('../lib/get-skip-steps')
+const prepareSoknad = require('../lib/prepare-data-for-submit')
 
 module.exports.getNextStep = (request, reply) => {
   const payload = request.payload
@@ -238,8 +239,7 @@ module.exports.getPartTiltak = (request, reply) => {
 }
 
 module.exports.getPartSeover = (request, reply) => {
-  const yar = request.yar
-  const document = yar._store
+  const document = prepareSoknad(request)
   const viewOptions = {
     version: pkg.version,
     versionName: pkg.louie.versionName,
@@ -247,7 +247,7 @@ module.exports.getPartSeover = (request, reply) => {
     systemName: pkg.louie.systemName,
     githubUrl: pkg.repository.url,
     logoutUrl: config.AUTH_LOGOUT_URL,
-    document: JSON.stringify(document, null, 2)
+    document: document
   }
 
   reply.view('seover', viewOptions)
