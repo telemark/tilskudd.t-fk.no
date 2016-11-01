@@ -271,7 +271,7 @@ module.exports.getPartFinanser = (request, reply) => {
 
 module.exports.getPartKvittering = (request, reply) => {
   const yar = request.yar
-  const document = JSON.parse(JSON.stringify(yar._store))
+  const document = prepareSoknad(request)
   const viewOptions = {
     version: pkg.version,
     versionName: pkg.louie.versionName,
@@ -279,7 +279,7 @@ module.exports.getPartKvittering = (request, reply) => {
     systemName: pkg.louie.systemName,
     githubUrl: pkg.repository.url,
     logoutUrl: config.AUTH_LOGOUT_URL,
-    document: JSON.stringify(document, null, 2)
+    document: document
   }
 
   yar.reset()
@@ -296,8 +296,7 @@ module.exports.doCleanup = (request, reply) => {
 }
 
 module.exports.doSubmit = (request, reply) => {
-  const yar = request.yar
-  const document = yar._store
+  const document = prepareSoknad(request)
   request.seneca.act({role: 'queue', cmd: 'add', data: document})
   reply.redirect('/kvittering')
 }
