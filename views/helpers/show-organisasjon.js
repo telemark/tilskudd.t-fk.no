@@ -10,8 +10,6 @@ module.exports = (document) => {
   output.push(`Telefon: ${organisasjon.telefonNummer}`)
   output.push(`E-post: ${organisasjon.epost}`)
   output.push(`Adresse: ${organisasjon.adresse}`)
-  output.push(`Kommune: ${organisasjon.kommune}`)
-  output.push(`Fylke: ${organisasjon.fylke}`)
 
   return output.join('<br/>')
 }

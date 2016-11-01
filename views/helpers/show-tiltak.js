@@ -60,5 +60,7 @@ module.exports = (document) => {
     output.push('Ingen samarbeidsparter')
   }
 
-  return output.join('<br/>')
+  const trimmed = output.map((item) => item.trim())
+
+  return trimmed.join('<br/>')
 }
