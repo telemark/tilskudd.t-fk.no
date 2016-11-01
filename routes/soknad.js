@@ -125,16 +125,6 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/kategorieridrett',
-    handler: handler.getPartKategorierIdrett,
-    config: {
-      auth: false,
-      security: true,
-      description: 'Show part for kategorieridrett'
-    }
-  },
-  {
-    method: 'GET',
     path: '/partners',
     handler: handler.getPartPartners,
     config: {

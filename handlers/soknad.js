@@ -3,7 +3,6 @@
 const config = require('../config')
 const pkg = require('../package.json')
 const categoriesFolkehelse = require('../config/categoriesfolkehelse.json')
-const categoriesIdrett = require('../config/categoriesidrett.json')
 const getCategories = require('../lib/get-categories')
 const getNextForm = require('../lib/get-next-form')
 const getSkipSteps = require('../lib/get-skip-steps')
@@ -184,23 +183,6 @@ module.exports.getPartKategorierFolkehelse = (request, reply) => {
     githubUrl: pkg.repository.url,
     logoutUrl: config.AUTH_LOGOUT_URL,
     categories: categoriesFolkehelse
-  }
-
-  reply.view('kategorierfolkehelse', viewOptions)
-}
-
-module.exports.getPartKategorierIdrett = (request, reply) => {
-  const yar = request.yar
-  const data = yar.get('kategorieridrett') || {}
-  const viewOptions = {
-    data: data,
-    version: pkg.version,
-    versionName: pkg.louie.versionName,
-    versionVideoUrl: pkg.louie.versionVideoUrl,
-    systemName: pkg.louie.systemName,
-    githubUrl: pkg.repository.url,
-    logoutUrl: config.AUTH_LOGOUT_URL,
-    categories: categoriesIdrett
   }
 
   reply.view('kategorierfolkehelse', viewOptions)
