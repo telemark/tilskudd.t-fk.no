@@ -30,9 +30,7 @@ module.exports = (document) => {
   if (/folkehelse/.test(document.formal.formal)) {
     output.push(`Kategori: ${document.kategorierfolkehelse.kategorier}`)
   }
-  if (/idrett/.test(document.formal.formal)) {
-    output.push(`Kategori: ${document.kategorieridrett.kategorier}`)
-  }
+
   if (/kultur/.test(document.formal.formal)) {
     output.push(`Kategori: ${document.artform.artform} - ${getArtSubCategory(document.kategorier.kategorier)}`)
   }

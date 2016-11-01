@@ -90,5 +90,23 @@
       "id":"602",
       "description": "Publikasjon"
     }
+  ],
+  "Idrett": [
+    {
+      "id":"701",
+      "description": "Idrettsarrangement"
+    },
+    {
+      "id":"702",
+      "description": "Talentutvikling"
+    },
+    {
+      "id":"703",
+      "description": "Økt fysisk aktivitet"
+    },
+    {
+      "id":"704",
+      "description": "Annet idrettstiltak"
+    }
   ]
 }
