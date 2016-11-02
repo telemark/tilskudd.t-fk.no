@@ -1,6 +1,6 @@
 'use strict'
 
-function getArtSubCategory (data) {
+function getSubCategory (data) {
   if (Array.isArray(data)) {
     return data.join(', ')
   } else {
@@ -28,11 +28,11 @@ module.exports = (document) => {
   }
 
   if (/folkehelse/.test(document.formal.formal)) {
-    output.push(`Kategori: ${document.kategorierfolkehelse.kategorier}`)
+    output.push(`Kategori: ${getSubCategory(document.kategorier.beskrivelse)}`)
   }
 
   if (/kultur/.test(document.formal.formal)) {
-    output.push(`Kategori: ${document.artform.artform} - ${getArtSubCategory(document.kategorier.kategorier)}`)
+    output.push(`Kategori: ${document.artform.artform} - ${getSubCategory(document.kategorier.beskrivelse)}`)
   }
 
   output.push(`Beskrivelse: ${tiltak.beskrivelse}`)
