@@ -154,8 +154,11 @@ module.exports.getPartArtform = (request, reply) => {
 module.exports.getPartKategorier = (request, reply) => {
   const yar = request.yar
   const artform = yar.get('artform')
+  const formal = yar.get('formal')
+  const isFolkehelse = /folkehelse/.test(formal.formal)
+  const categoryType = isFolkehelse ? 'Folkehelse' : artform.artform
   const data = yar.get('kategorier') || {}
-  const categories = getCategories(artform.artform)
+  const categories = getCategories(categoryType)
   const viewOptions = {
     data: data,
     version: pkg.version,
@@ -168,23 +171,6 @@ module.exports.getPartKategorier = (request, reply) => {
   }
 
   reply.view('kategorier', viewOptions)
-}
-
-module.exports.getPartKategorierFolkehelse = (request, reply) => {
-  const yar = request.yar
-  const data = yar.get('kategorierfolkehelse') || {}
-  const viewOptions = {
-    data: data,
-    version: pkg.version,
-    versionName: pkg.louie.versionName,
-    versionVideoUrl: pkg.louie.versionVideoUrl,
-    systemName: pkg.louie.systemName,
-    githubUrl: pkg.repository.url,
-    logoutUrl: config.AUTH_LOGOUT_URL,
-    categories: getCategories('Folkehelse')
-  }
-
-  reply.view('kategorierfolkehelse', viewOptions)
 }
 
 module.exports.getPartPartners = (request, reply) => {

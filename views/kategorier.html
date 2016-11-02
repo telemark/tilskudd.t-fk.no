@@ -1,11 +1,11 @@
 <div class="row">
-    <h1>Kategori</h1>
+    <h1>Beskrivelse</h1>
     <form action="/next" method="post">
         <input type="hidden" name="stepName" value="kategorier">
         <fieldset class="fieldset">
-            <legend>Hva beskriver tiltaket best?</legend>
+            <legend>Hva beskriver arrangementet/tiltaket best?</legend>
             {{#each categories}}
-            <input type="checkbox" name="kategorier" value="{{description}}" id="kategorierCheck{{id}}"><label
+            <input type="checkbox" name="beskrivelse" value="{{description}}" id="kategorierCheck{{id}}"><label
                 for="kategorierCheck{{id}}">{{description}}</label><br/>
             {{/each}}
         </fieldset>

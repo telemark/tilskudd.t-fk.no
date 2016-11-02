@@ -115,16 +115,6 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/kategorierfolkehelse',
-    handler: handler.getPartKategorierFolkehelse,
-    config: {
-      auth: false,
-      security: true,
-      description: 'Show part for kategorierfolkehelse'
-    }
-  },
-  {
-    method: 'GET',
     path: '/partners',
     handler: handler.getPartPartners,
     config: {
