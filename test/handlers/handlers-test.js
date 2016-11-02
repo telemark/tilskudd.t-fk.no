@@ -15,4 +15,8 @@ tap.ok(handlers.showVeilederpage, 'Handler has method showVeilederpage')
 
 tap.ok(handlers.showTilskuddpage, 'Handler has method showTilskuddpage')
 
+tap.ok(handlers.showIkkefunnetpage, 'Handler has method showIkkefunnetpage')
+
+tap.ok(handlers.start, 'Handler has method start')
+
 tap.ok(handlers.doLogout, 'Handler has method doLogout')
