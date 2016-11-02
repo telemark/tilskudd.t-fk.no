@@ -108,5 +108,23 @@
       "id":"704",
       "description": "Annet idrettstiltak"
     }
+  ],
+  "Folkehelse": [
+    {
+      "id":"801",
+      "description": "Bedre psykisk helse"
+    },
+    {
+      "id":"802",
+      "description": "Økt fysisk aktivitet"
+    },
+    {
+      "id":"803",
+      "description": "Inkluderende møteplasser"
+    },
+    {
+      "id":"804",
+      "description": "Annet folkehelsearbeid"
+    }
   ]
 }
