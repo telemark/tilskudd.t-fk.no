@@ -64,7 +64,7 @@ module.exports.showTilskuddpage = (request, reply) => {
     githubUrl: pkg.repository.url
   }
 
-  reply.view('tilskudd', viewOptions)
+  reply.view('tilskuddsordningene', viewOptions)
 }
 
 module.exports.showIkkefunnetpage = (request, reply) => {

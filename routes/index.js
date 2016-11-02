@@ -65,7 +65,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/tilskudd',
+    path: '/tilskuddsordningene',
     handler: handlers.showTilskuddpage,
     config: {
       auth: false,
