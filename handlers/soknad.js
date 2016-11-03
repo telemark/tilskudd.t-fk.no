@@ -219,6 +219,22 @@ module.exports.getPartTiltak = (request, reply) => {
   reply.view('tiltak', viewOptions)
 }
 
+module.exports.getPartBidrag = (request, reply) => {
+  const yar = request.yar
+  const data = yar.get('bidrag') || {}
+  const viewOptions = {
+    data: data,
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url,
+    logoutUrl: config.AUTH_LOGOUT_URL
+  }
+
+  reply.view('bidrag', viewOptions)
+}
+
 module.exports.getPartSeover = (request, reply) => {
   const document = prepareSoknad(request)
   const viewOptions = {

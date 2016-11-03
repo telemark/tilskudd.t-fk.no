@@ -1,0 +1,19 @@
+<div class="row">
+    <h1>Bidrag</h1>
+    <form action="/next" method="post">
+        <input type="hidden" name="stepName" value="bidrag">
+        <fieldset class="fieldset">
+            <legend>Hvordan bidrar samarbeidspartene?</legend>
+            <input type="checkbox" name="bidrag" value="Midler" id="bidragCheck01"><label
+                for="bidragCheck01">Midler</label><br />
+            <input type="checkbox" name="bidrag" value="Utstyr" id="bidragCheck02"><label for="bidragCheck02">Utstyr</label><br/>
+            <input type="checkbox" name="bidrag" value="Lokaler" id="bidragCheck03"><label for="bidragCheck03">Lokaler</label>
+            <input type="checkbox" name="bidrag" value="Frivillighet eller frivillig arbeid" id="bidragCheck04"><label for="bidragCheck04">Frivillighet eller frivillig arbeid</label>
+        </fieldset>
+        <div class="expanded button-group">
+            <a href="/previous" title="Gå til forrige punkt i søknaden" class="secondary button">Forrige</a>
+            <a href="/cleanup" title="Avbryt søknaden" class="alert button">Avbryt søknaden</a>
+            <button type="submit" title="Gå til neste punkt i søknaden" class="primary button">Neste</button>
+        </div>
+    </form>
+</div>

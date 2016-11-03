@@ -3,7 +3,7 @@
 const tap = require('tap')
 const handlers = require('../../handlers/soknad')
 
-tap.equal(Object.keys(handlers).length, 18, 'There are 18 soknad handlers')
+tap.equal(Object.keys(handlers).length, 19, 'There are 19 soknad handlers')
 
 tap.ok(handlers.doInit, 'Handler has method doInit')
 
@@ -28,6 +28,8 @@ tap.ok(handlers.getPartArtform, 'Handler has method getPartArtform')
 tap.ok(handlers.getPartKategorier, 'Handler has method getPartKategorier')
 
 tap.ok(handlers.getPartPartners, 'Handler has method getPartPartners')
+
+tap.ok(handlers.getPartBidrag, 'Handler has method getPartBidrag')
 
 tap.ok(handlers.getPartTiltak, 'Handler has method getPartTiltak')
 

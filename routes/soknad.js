@@ -155,6 +155,16 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/bidrag',
+    handler: handler.getPartBidrag,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show part for bidrag'
+    }
+  },
+  {
+    method: 'GET',
     path: '/seover',
     handler: handler.getPartSeover,
     config: {
