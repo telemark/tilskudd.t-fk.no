@@ -56,6 +56,13 @@ module.exports = (document) => {
       }
     }
     output.push(`${document.samarbeidsparter.beskrivelse}`)
+    if (document.bidrag && document.bidrag.bidrag) {
+      if (Array.isArray(document.bidrag.bidrag)) {
+        output.push(`Bidrag: ${document.bidrag.bidrag.join(', ')}`)
+      } else {
+        output.push(`Bidrag: ${document.bidrag.bidrag}`)
+      }
+    }
   } else {
     output.push('Ingen samarbeidsparter')
   }
