@@ -25,6 +25,16 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/organisasjonsnummer',
+    handler: handlers.showOrganisasjonsnummerpage,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Show organisasjonsnummerpage'
+    }
+  },
+  {
+    method: 'GET',
     path: '/kontakt',
     handler: handlers.showKontaktpage,
     config: {

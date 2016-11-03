@@ -79,6 +79,18 @@ module.exports.showIkkefunnetpage = (request, reply) => {
   reply.view('ikkefunnet', viewOptions)
 }
 
+module.exports.showOrganisasjonsnummerpage = (request, reply) => {
+  const viewOptions = {
+    version: pkg.version,
+    versionName: pkg.louie.versionName,
+    versionVideoUrl: pkg.louie.versionVideoUrl,
+    systemName: pkg.louie.systemName,
+    githubUrl: pkg.repository.url
+  }
+
+  reply.view('organisasjonsnummer', viewOptions)
+}
+
 module.exports.start = (request, reply) => {
   const yar = request.yar
   const receivedToken = request.query.jwt

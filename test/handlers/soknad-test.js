@@ -3,7 +3,9 @@
 const tap = require('tap')
 const handlers = require('../../handlers/soknad')
 
-tap.equal(Object.keys(handlers).length, 17, 'There are 17 soknad handlers')
+tap.equal(Object.keys(handlers).length, 18, 'There are 18 soknad handlers')
+
+tap.ok(handlers.doInit, 'Handler has method doInit')
 
 tap.ok(handlers.getNextStep, 'Handler has method getNextStep')
 

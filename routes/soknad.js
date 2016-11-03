@@ -5,6 +5,16 @@ const handler = require('../handlers/soknad')
 module.exports = [
   {
     method: 'POST',
+    path: '/init',
+    handler: handler.doInit,
+    config: {
+      auth: false,
+      security: true,
+      description: 'Start initialization'
+    }
+  },
+  {
+    method: 'POST',
     path: '/next',
     handler: handler.getNextStep,
     config: {

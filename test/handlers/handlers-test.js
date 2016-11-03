@@ -3,7 +3,7 @@
 const tap = require('tap')
 const handlers = require('../../handlers')
 
-tap.equal(Object.keys(handlers).length, 8, 'There are 8 standard handlers')
+tap.equal(Object.keys(handlers).length, 9, 'There are 9 standard handlers')
 
 tap.ok(handlers.showFrontpage, 'Handler has method showFrontpage')
 
@@ -16,6 +16,8 @@ tap.ok(handlers.showVeilederpage, 'Handler has method showVeilederpage')
 tap.ok(handlers.showTilskuddpage, 'Handler has method showTilskuddpage')
 
 tap.ok(handlers.showIkkefunnetpage, 'Handler has method showIkkefunnetpage')
+
+tap.ok(handlers.showOrganisasjonsnummerpage, 'Handler has method showOrganisasjonsnummerpage')
 
 tap.ok(handlers.start, 'Handler has method start')
 

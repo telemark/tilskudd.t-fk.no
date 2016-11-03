@@ -7,6 +7,14 @@ const getNextForm = require('../lib/get-next-form')
 const getSkipSteps = require('../lib/get-skip-steps')
 const prepareSoknad = require('../lib/prepare-data-for-submit')
 
+module.exports.doInit = (request, reply) => {
+  const payload = request.payload
+  const orgNr = payload.orgnr
+  const url = `${config.AUTH_LOGIN_URL}/${orgNr}`
+
+  reply.redirect(url)
+}
+
 module.exports.getNextStep = (request, reply) => {
   const payload = request.payload
   const yar = request.yar
