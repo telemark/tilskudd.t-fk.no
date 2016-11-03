@@ -10,6 +10,7 @@ const prepareSoknad = require('../lib/prepare-data-for-submit')
 module.exports.getNextStep = (request, reply) => {
   const payload = request.payload
   const yar = request.yar
+  const validatedContactInfo = yar.get('validatedContactInfo')
 
   if (payload) {
     var completedSteps = yar.get('completedSteps') || []
@@ -24,7 +25,11 @@ module.exports.getNextStep = (request, reply) => {
 
   const nextForm = getNextForm(yar._store)
 
-  reply.redirect('/' + nextForm)
+  if (validatedContactInfo) {
+    reply.redirect('/' + nextForm)
+  } else {
+    reply.redirect('/kontaktperson')
+  }
 }
 
 module.exports.getPreviousStep = (request, reply) => {
@@ -58,6 +63,7 @@ module.exports.getPartOrganisasjon = (request, reply) => {
 module.exports.getPartKontaktperson = (request, reply) => {
   const yar = request.yar
   const data = yar.get('kontaktperson') || {}
+  yar.set('validatedContactInfo', true)
   const viewOptions = {
     data: data,
     version: pkg.version,

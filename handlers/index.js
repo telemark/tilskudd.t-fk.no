@@ -92,16 +92,20 @@ module.exports.start = (request, reply) => {
 
   const token = jwt.sign(data, config.JWT_SECRET, tokenOptions)
 
-  yar.reset()
-  yar.set('dsfData', data.dsfData)
-  yar.set('korData', data.korData)
-  yar.set('brregData', data.brregData)
-  yar.set('skjemaUtfyllingStart', new Date().getTime())
-
+  const dsfData = data.dsfData
+  const korData = data.korData
+  const brregData = data.brregData
   const dsfError = data.dsfError
   const korError = data.korError
+  const trouble = (dsfError || korError) || (!dsfData || !korData || !brregData)
 
-  if (dsfError || korError) {
+  yar.reset()
+  yar.set('dsfData', dsfData)
+  yar.set('korData', korData)
+  yar.set('brregData', brregData)
+  yar.set('skjemaUtfyllingStart', new Date().getTime())
+
+  if (trouble) {
     reply.redirect('/ikkefunnet')
   } else {
     request.cookieAuth.set({
@@ -110,10 +114,11 @@ module.exports.start = (request, reply) => {
       data: data
     })
 
+    yar.set('validatedContactInfo', false)
     yar.set('organisasjon', repackBrreg(data.brregData))
     yar.set('kontaktperson', repackKontaktinfo(data))
 
-    reply.redirect('/')
+    reply.redirect('/organisasjon')
   }
 }
 
