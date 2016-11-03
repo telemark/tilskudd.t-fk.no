@@ -9,6 +9,7 @@
             </label>
             <label>Beskrivelse av tiltaket/arrangementet
                 <textarea id="beskrivelse" name="beskrivelse" required maxlength="1000">{{data.beskrivelse}}</textarea>
+                <p class="help-text">Du har <span id="tegnIgjen">???</span> tegn igjen</p>
             </label>
             <label>Sted for arrangement
                 <input type="text" id="hvor" name="hvor" value="{{data.hvor}}" required>
@@ -29,3 +30,5 @@
         </div>
     </form>
 </div>
+
+<script src="public/js/word-counter.js"></script>
