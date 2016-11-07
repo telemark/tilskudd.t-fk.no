@@ -10,6 +10,6 @@ module.exports = {
   YAR_SECRET: envs.TILSKUDD_YAR_SECRET || 'Louie Louie, oh no, I got to go. Louie Louie, oh no, I got to go',
   AUTH_LOGIN_URL: envs.TILSKUDD_AUTH_LOGIN_URL || '/login',
   AUTH_LOGOUT_URL: envs.TILSKUDD_AUTH_LOGOUT_URL || '/logout',
-  QUEUE_SERVER: envs.TILSKUDD_QUEUE_SERVER || 'localhost/queue',
+  QUEUE_SERVER: envs.TILSKUDD_QUEUE_SERVER || 'localhost/tilskudd',
   CALLBACK_STATUS_URL: envs.TILSKUDD_CALLBACK_STATUS_URL || 'https://test.tilskudd.t-fk.no/api'
 }
