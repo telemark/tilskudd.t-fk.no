@@ -2,6 +2,8 @@
 
 const config = require('../config')
 const pkg = require('../package.json')
+const buildTestdata = require('../lib/build-testdata')
+const buildTestJwt = require('../lib/build-test-jwt')
 
 module.exports.showTestPage = (request, reply) => {
   const viewOptions = {
@@ -17,7 +19,12 @@ module.exports.showTestPage = (request, reply) => {
 }
 
 module.exports.setupTestData = (request, reply) => {
-  reply.redirect('/')
+  const payload = request.payload
+  const data = buildTestdata(payload)
+  const jwt = buildTestJwt(data)
+  const url = `/start?jwt=${jwt}`
+
+  reply.redirect(url)
 }
 
 module.exports.testPing = (request, reply) => {
