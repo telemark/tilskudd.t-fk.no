@@ -6,6 +6,7 @@ const getCategories = require('../lib/get-categories')
 const getNextForm = require('../lib/get-next-form')
 const getSkipSteps = require('../lib/get-skip-steps')
 const prepareSoknad = require('../lib/prepare-data-for-submit')
+const getReferer = require('../lib/get-referer')
 
 module.exports.doInit = (request, reply) => {
   const payload = request.payload
@@ -19,6 +20,7 @@ module.exports.getNextStep = (request, reply) => {
   const payload = request.payload
   const yar = request.yar
   const validatedContactInfo = yar.get('validatedContactInfo')
+  const cameFrom = getReferer(request.headers)
 
   if (payload) {
     var completedSteps = yar.get('completedSteps') || []
@@ -34,7 +36,11 @@ module.exports.getNextStep = (request, reply) => {
   const nextForm = getNextForm(yar._store)
 
   if (validatedContactInfo) {
-    reply.redirect('/' + nextForm)
+    if (nextForm === cameFrom) {
+      reply.redirect('/previous')
+    } else {
+      reply.redirect('/' + nextForm)
+    }
   } else {
     reply.redirect('/kontaktperson')
   }
