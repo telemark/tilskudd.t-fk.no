@@ -1,13 +1,20 @@
 {
   "name": "tilskudd.t-fk.no",
   "description": "Løsning for søknader om tilskudd",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "license": "MIT",
   "author": {
-    "name": "Geir Gåsodden",
-    "email": "geir.gasodden@pythonia.no",
-    "url": "https://github.com/zrrrzzt"
+    "name": "Jonas Enge",
+    "email": "jonas.enge@gmail.com",
+    "url": "https://github.com/maccyber"
   },
+  "contributors": [
+    {
+      "name": "Geir Gåsodden",
+      "email": "geir.gasodden@pythonia.no",
+      "url": "https://github.com/zrrrzzt"
+    }
+  ],
   "main": "index.js",
   "engines": {
     "node": ">=4.6.2"
