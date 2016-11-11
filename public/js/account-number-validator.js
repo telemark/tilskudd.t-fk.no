@@ -7,7 +7,7 @@ const button = document.getElementById('nextButton')
 function isValidAccountNumber (accountnumber) {
   var controlDigitIndex = accountnumber.length - 1;
 
-  if (organizationnumber.length !== 11) {
+  if (accountnumber.length !== 11) {
     return false
   } else {
     return accountnumber.substr(controlDigitIndex) === generateControlDigit(accountnumber.substr(0, controlDigitIndex));
