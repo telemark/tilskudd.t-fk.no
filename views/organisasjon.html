@@ -5,22 +5,22 @@
         <fieldset class="fieldset">
             <legend>Informasjon om organisasjonen</legend>
             <label>Organisasjonsnummer
-                <input type="number" id="organisasjonsnummer" name="organisasjonsNummer" value="{{data.organisasjonsNummer}}" required>
+                <input type="number" id="organisasjonsnummer" name="organisasjonsNummer" value="{{data.organisasjonsNummer}}" readonly>
             </label>
             <label>Organisasjonens kontonummer
                 <input type="number" id="kontonummer" name="kontoNummer" value="{{data.kontoNummer}}" required>
                 <p class="help-text" id="kontonummerValid"></p>
             </label>
             <label>Hva heter organisasjonen?
-                <input type="text" id="organisasjonsnavn" name="organisasjonsNavn" value="{{data.organisasjonsNavn}}" required>
+                <input type="text" id="organisasjonsnavn" name="organisasjonsNavn" value="{{data.organisasjonsNavn}}" readonly>
             </label>
             <label>Organisasjonens adresse
-                <input type="text" id="adresse" name="adresse" value="{{data.adresse}}" required>
+                <input type="text" id="adresse" name="adresse" value="{{data.adresse}}" readonly>
             </label>
-            <label>Telefonnummer
-                <input type="tel" id="telefonnummer" name="telefonNummer" value="{{data.telefonNummer}}">
+            <label>Organisasjonens telefonnummer
+                <input type="tel" id="telefonnummer" name="telefonNummer" value="{{data.telefonNummer}}" readonly>
             </label>
-            <label>E-post
+            <label>Organisasjonens e-postadresse
                 <input type="email" id="epost" name="epost" value="{{data.epost}}">
             </label>
         </fieldset>
