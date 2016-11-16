@@ -65,16 +65,6 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/veileder',
-    handler: handlers.showVeilederpage,
-    config: {
-      auth: false,
-      security: true,
-      description: 'Show veilederpage'
-    }
-  },
-  {
-    method: 'GET',
     path: '/tilskuddsordningene',
     handler: handlers.showTilskuddpage,
     config: {

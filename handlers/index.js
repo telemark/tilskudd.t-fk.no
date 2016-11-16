@@ -43,18 +43,6 @@ module.exports.showPersonvernpage = (request, reply) => {
   reply.view('personvern', viewOptions)
 }
 
-module.exports.showVeilederpage = (request, reply) => {
-  const viewOptions = {
-    version: pkg.version,
-    versionName: pkg.louie.versionName,
-    versionVideoUrl: pkg.louie.versionVideoUrl,
-    systemName: pkg.louie.systemName,
-    githubUrl: pkg.repository.url
-  }
-
-  reply.view('veileder', viewOptions)
-}
-
 module.exports.showTilskuddpage = (request, reply) => {
   const viewOptions = {
     version: pkg.version,
