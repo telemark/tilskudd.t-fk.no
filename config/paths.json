@@ -1,0 +1,50 @@
+[
+  {
+    "id": "organisasjon",
+    "name": "Organisasjonen"
+  },
+  {
+    "id": "formal",
+    "name": "Formål"
+  },
+  {
+    "id": "artform",
+    "name": "Kategori"
+  },
+  {
+    "id": "kategorier",
+    "name": "Underkategori"
+  },
+  {
+    "id": "target",
+    "name": "Target"
+  },
+  {
+    "id": "tiltak",
+    "name": "Tiltaket"
+  },
+  {
+    "id": "collaboration",
+    "name": "Samarbeid"
+  },
+  {
+    "id": "partners",
+    "name": "Partners"
+  },
+  {
+    "id": "samarbeidsparter",
+    "name": "Samarbeidsparter"
+  },
+  {
+    "id": "finanser",
+    "name": "Økonomi"
+  },
+  {
+    "id": "bidrag",
+    "name": "Bidrag"
+  },
+  {
+    "id": "seover",
+    "name": "Se over"
+  }
+]
