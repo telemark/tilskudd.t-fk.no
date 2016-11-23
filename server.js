@@ -19,6 +19,7 @@ const validateSession = require('./lib/validate-session')
 const validateApi = require('./lib/validate-api')
 const senecaPing = require('./lib/seneca-ping')
 const senecaHub = require('./lib/seneca-hub')
+const envs = process.env
 
 const blankieOptions = {
   styleSrc: ['https://fonts.googleapis.com', 'https://code.getmdl.io', 'self'],
@@ -118,6 +119,13 @@ server.register(plugins, error => {
 
   registerRoutes()
 
+  const meshOptions = {
+    auto: true,
+    host: envs.TILSKUDD_WEB_HOST || '127.0.0.1',
+    bases: [envs.TILSKUDD_BASE_HOST || '127.0.0.1:39999']
+  }
+
+  server.seneca.use('mesh', meshOptions)
   server.seneca.use(senecaPing)
   server.seneca.use(senecaHub)
   server.seneca.use(senecaQueue, {MONGODB_URI: config.QUEUE_SERVER})
