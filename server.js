@@ -2,6 +2,7 @@
 
 const Hapi = require('hapi')
 const Chairo = require('chairo')
+const Mesh = require('seneca-mesh')
 const Blankie = require('blankie')
 const Scooter = require('scooter')
 const Good = require('good')
@@ -124,7 +125,7 @@ server.register(plugins, error => {
 
   registerRoutes()
 
-  server.seneca.use('mesh', meshOptions)
+  server.seneca.use(Mesh, meshOptions)
   server.seneca.use(senecaPing)
   server.seneca.use(senecaHub)
   server.seneca.use(senecaQueue, {MONGODB_URI: config.QUEUE_SERVER})

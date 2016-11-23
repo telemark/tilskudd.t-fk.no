@@ -13,7 +13,10 @@ MAINTAINER Geir Gåsodden
 #### Begin setup ####
 
 # Installs git
-RUN apk add --update git && rm -rf /var/cache/apk/*
+RUN apk add --update --no-cache git
+
+# Extra tools for native dependencies
+RUN apk add --no-cache make gcc g++ python
 
 # Bundle app source
 COPY . /src

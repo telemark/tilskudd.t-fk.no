@@ -29,5 +29,3 @@ tilskudd_webserver:
   net: host
   ports:
     - "8000:8000"
-  links:
-   - queueserver
