@@ -22,9 +22,9 @@ const senecaHub = require('./lib/seneca-hub')
 const envs = process.env
 
 const meshOptions = {
-  auto: true,
-  host: envs.TILSKUDD_WEB_HOST || '127.0.0.1',
-  bases: [envs.TILSKUDD_BASE_HOST || '127.0.0.1:39999']
+  auto: true
+//  host: envs.TILSKUDD_WEB_HOST || '127.0.0.1',
+//  bases: [envs.TILSKUDD_BASE_HOST || '127.0.0.1:39999']
 }
 
 const blankieOptions = {
