@@ -25,6 +25,8 @@ tilskudd_services_counter:
 tilskudd_webserver:
   image: telemark/tilskudd.t-fk.no
   env_file: tilskudd.env
+  restart: always
+  net: host
   ports:
     - "8000:8000"
   links:
