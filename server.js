@@ -21,6 +21,12 @@ const senecaPing = require('./lib/seneca-ping')
 const senecaHub = require('./lib/seneca-hub')
 const envs = process.env
 
+const meshOptions = {
+  auto: true,
+  host: envs.TILSKUDD_WEB_HOST || '127.0.0.1',
+  bases: [envs.TILSKUDD_BASE_HOST || '127.0.0.1:39999']
+}
+
 const blankieOptions = {
   styleSrc: ['https://fonts.googleapis.com', 'https://code.getmdl.io', 'self'],
   fontSrc: 'https://fonts.gstatic.com self',
@@ -118,12 +124,6 @@ server.register(plugins, error => {
   })
 
   registerRoutes()
-
-  const meshOptions = {
-    auto: true,
-    host: envs.TILSKUDD_WEB_HOST || '127.0.0.1',
-    bases: [envs.TILSKUDD_BASE_HOST || '127.0.0.1:39999']
-  }
 
   server.seneca.use('mesh', meshOptions)
   server.seneca.use(senecaPing)
