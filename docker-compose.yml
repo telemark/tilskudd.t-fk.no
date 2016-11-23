@@ -2,7 +2,7 @@ queueserver:
   image: mongo:3.3.15
 
 tilskudd_services_base:
-  image: telemark/tfk-seneca-base
+  image: telemark/tfk-seneca-mesh-base
   container_name: tilskudd_services_base
   env_file: tilskudd.env
   restart: always

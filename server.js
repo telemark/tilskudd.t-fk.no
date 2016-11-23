@@ -21,9 +21,9 @@ const senecaPing = require('./lib/seneca-ping')
 const senecaHub = require('./lib/seneca-hub')
 
 const meshOptions = {
-  auto: true
-//  host: process.env.TILSKUDD_WEB_HOST || '127.0.0.1',
-//  bases: [process.env.TILSKUDD_BASE_HOST || '127.0.0.1:39999']
+  auto: true,
+  host: process.env.TILSKUDD_WEB_HOST || '127.0.0.1',
+  bases: [process.env.TILSKUDD_BASE_HOST || '127.0.0.1:39999']
 }
 
 const blankieOptions = {
