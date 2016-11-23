@@ -19,12 +19,11 @@ const validateSession = require('./lib/validate-session')
 const validateApi = require('./lib/validate-api')
 const senecaPing = require('./lib/seneca-ping')
 const senecaHub = require('./lib/seneca-hub')
-const envs = process.env
 
 const meshOptions = {
   auto: true
-//  host: envs.TILSKUDD_WEB_HOST || '127.0.0.1',
-//  bases: [envs.TILSKUDD_BASE_HOST || '127.0.0.1:39999']
+//  host: process.env.TILSKUDD_WEB_HOST || '127.0.0.1',
+//  bases: [process.env.TILSKUDD_BASE_HOST || '127.0.0.1:39999']
 }
 
 const blankieOptions = {
