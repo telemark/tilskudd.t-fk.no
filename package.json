@@ -60,7 +60,7 @@
     "handlebars": "4.0.6",
     "hapi": "15.2.0",
     "hapi-auth-cookie-issamesite-patch": "6.1.2",
-    "hapi-auth-jwt2": "7.2.0",
+    "hapi-auth-jwt2": "7.2.1",
     "inert": "4.0.2",
     "jsonwebtoken": "7.1.9",
     "scooter": "4.0.0",
