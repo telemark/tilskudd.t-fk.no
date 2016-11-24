@@ -2,6 +2,6 @@
 
 const tap = require('tap')
 
-tap.ok(tap, 'tap loads OK')
+tap.ok(tap, 'tap loads ok')
 
-tap.equal(true, true, 'tap works OK')
+tap.equal(true, true, 'tap works ok')

@@ -1,7 +1,7 @@
 {
   "name": "tilskudd.t-fk.no",
   "description": "Løsning for søknader om tilskudd",
-  "version": "1.1.25",
+  "version": "1.1.26",
   "license": "MIT",
   "private": true,
   "author": {
