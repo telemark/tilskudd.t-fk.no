@@ -19,7 +19,6 @@ const tilskuddService = require('./index')
 const validateSession = require('./lib/validate-session')
 const validateApi = require('./lib/validate-api')
 const senecaPing = require('./lib/seneca-ping')
-const senecaHub = require('./lib/seneca-hub')
 
 const meshOptions = {
   auto: true,
@@ -127,7 +126,6 @@ server.register(plugins, error => {
 
   server.seneca.use(Mesh, meshOptions)
   server.seneca.use(senecaPing)
-  server.seneca.use(senecaHub)
   server.seneca.use(senecaQueue, {MONGODB_URI: config.QUEUE_SERVER})
 })
 
