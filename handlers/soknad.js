@@ -7,6 +7,7 @@ const getNextForm = require('../lib/get-next-form')
 const getSkipSteps = require('../lib/get-skip-steps')
 const prepareSoknad = require('../lib/prepare-data-for-submit')
 const getReferer = require('../lib/get-referer')
+const generateBreadCrumbs = require('../lib/generate-breadcrumb')
 
 module.exports.doInit = (request, reply) => {
   const payload = request.payload
@@ -63,6 +64,7 @@ module.exports.getPartOrganisasjon = (request, reply) => {
   const data = yar.get('organisasjon') || {}
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -80,6 +82,7 @@ module.exports.getPartKontaktperson = (request, reply) => {
   yar.set('validatedContactInfo', true)
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -96,6 +99,7 @@ module.exports.getPartFormal = (request, reply) => {
   const data = yar.get('formal') || {}
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -112,6 +116,7 @@ module.exports.getPartTarget = (request, reply) => {
   const data = yar.get('target') || {}
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -128,6 +133,7 @@ module.exports.getPartCollaboration = (request, reply) => {
   const data = yar.get('collaboration') || {}
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -144,6 +150,7 @@ module.exports.getPartSamarbeidsparter = (request, reply) => {
   const data = yar.get('samarbeidsparter') || {}
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -160,6 +167,7 @@ module.exports.getPartArtform = (request, reply) => {
   const data = yar.get('artform') || {}
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -181,6 +189,7 @@ module.exports.getPartKategorier = (request, reply) => {
   const categories = getCategories(categoryType)
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -198,6 +207,7 @@ module.exports.getPartPartners = (request, reply) => {
   const data = yar.get('partners') || {}
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -214,6 +224,7 @@ module.exports.getPartTiltak = (request, reply) => {
   const data = yar.get('tiltak') || {}
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -230,6 +241,7 @@ module.exports.getPartBidrag = (request, reply) => {
   const data = yar.get('bidrag') || {}
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -242,8 +254,10 @@ module.exports.getPartBidrag = (request, reply) => {
 }
 
 module.exports.getPartSeover = (request, reply) => {
+  const yar = request.yar
   const document = prepareSoknad(request)
   const viewOptions = {
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -261,6 +275,7 @@ module.exports.getPartFinanser = (request, reply) => {
   const data = yar.get('finanser') || {}
   const viewOptions = {
     data: data,
+    crumbs: generateBreadCrumbs(Object.keys(yar._store)),
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
