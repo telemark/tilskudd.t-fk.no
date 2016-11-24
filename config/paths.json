@@ -4,8 +4,12 @@
     "name": "Organisasjonen"
   },
   {
+    "id": "kontaktperson",
+    "name": "Kontaktperson"
+  },
+  {
     "id": "formal",
-    "name": "Formål"
+    "name": "Tilskuddsordning"
   },
   {
     "id": "artform",
@@ -13,11 +17,11 @@
   },
   {
     "id": "kategorier",
-    "name": "Underkategori"
+    "name": "Beskrivelse"
   },
   {
     "id": "target",
-    "name": "Target"
+    "name": "Målgruppe"
   },
   {
     "id": "tiltak",

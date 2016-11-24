@@ -23,11 +23,8 @@
             <input type="radio" name="antall" value="En dag" id="antallRadio01" required><label for="antallRadio01">En dag/ett arrangement</label><br/>
             <input type="radio" name="antall" value="Flere dager" id="antallRadio02" required><label for="antallRadio02">Flere dager/arrangementer</label><br/>
         </fieldset>
-        <div class="expanded button-group">
-            <a href="/previous" title="Gå til forrige punkt i søknaden" class="secondary button">Forrige</a>
-            <a href="/cleanup" title="Avbryt søknaden" class="alert button">Avbryt søknaden</a>
-            <button type="submit" title="Gå til neste punkt i søknaden" class="primary button">Neste</button>
-        </div>
+        {{{show-breadcrumbs crumbs}}}
+        {{>bottom-buttons}}
     </form>
 </div>
 

@@ -16,11 +16,8 @@
             <input type="checkbox" name="target" value="Minoritetsgrupper" id="targetCheck06"><label for="targetCheck06">Minoritetsgrupper</label><br/>
             <input type="checkbox" name="target" value="Personer med nedsatt funksjonsevne" id="targetCheck07"><label for="targetCheck07">Personer med nedsatt funksjonsevne</label>
         </fieldset>
-        <div class="expanded button-group">
-            <a href="/previous" title="Gå til forrige punkt i søknaden" class="secondary button">Forrige</a>
-            <a href="/cleanup" title="Avbryt søknaden" class="alert button">Avbryt søknaden</a>
-            <button type="submit" title="Gå til neste punkt i søknaden" class="primary button" id="nextButton">Neste</button>
-        </div>
+        {{{show-breadcrumbs crumbs}}}
+        {{>bottom-buttons}}
     </form>
 </div>
 
