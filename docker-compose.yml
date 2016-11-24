@@ -1,31 +1,30 @@
 queueserver:
-  image: mongo:3.3.15
+  image: mongo:3.2.11
 
 tilskudd_services_base:
   image: telemark/tfk-seneca-mesh-base
   container_name: tilskudd_services_base
   env_file: tilskudd.env
-  restart: always
-  net: host
+  net: "container:tilskudd_webserver"
 
 tilskudd_services_stats_dispatcher:
   image: telemark/tfk-seneca-mesh-tilskudd-stats-dispatcher
   container_name: tilskudd_services_stats_dispatcher
   env_file: tilskudd.env
-  restart: always
-  net: host
+  net: "container:tilskudd_webserver"
 
 tilskudd_services_counter:
   image: telemark/tfk-seneca-mesh-counter
   container_name: tilskudd_services_counter
   env_file: tilskudd.env
-  restart: always
-  net: host
+  net: "container:tilskudd_webserver"
 
 tilskudd_webserver:
   image: telemark/tilskudd.t-fk.no
+  container_name: tilskudd_webserver
   env_file: tilskudd.env
-  restart: always
   net: host
   ports:
     - "8000:8000"
+  links:
+    - queueserver
