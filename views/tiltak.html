@@ -20,8 +20,8 @@
             <label>Sluttdato
                 <input type="date" id="sluttdato" name="sluttdato" required>
             </label>
-            <input type="radio" name="antall" value="En dag" id="antallRadio01" required><label for="antallRadio01">En dag/ett arrangement</label><br/>
-            <input type="radio" name="antall" value="Flere dager" id="antallRadio02" required><label for="antallRadio02">Flere dager/arrangementer</label><br/>
+            <input type="radio" name="antall" value="En dag" id="antallRadio01" required  {{radio-is-checked 'En dag' data.antall}}><label for="antallRadio01">En dag/ett arrangement</label><br/>
+            <input type="radio" name="antall" value="Flere dager" id="antallRadio02" {{radio-is-checked 'En dag' data.antall}}><label for="antallRadio02">Flere dager/arrangementer</label><br/>
         </fieldset>
         {{{show-breadcrumbs crumbs}}}
         {{>bottom-buttons}}

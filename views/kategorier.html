@@ -5,7 +5,7 @@
         <fieldset class="fieldset">
             <legend>Hva beskriver arrangementet/tiltaket best?</legend>
             {{#each categories}}
-            <input type="checkbox" name="beskrivelse" value="{{description}}" id="kategorierCheck{{id}}"><label
+            <input type="checkbox" name="beskrivelse" value="{{description}}" id="kategorierCheck{{id}}" {{checkbox-is-checked description data}}><label
                 for="kategorierCheck{{id}}">{{description}}</label><br/>
             {{/each}}
         </fieldset>
