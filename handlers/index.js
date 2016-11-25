@@ -149,5 +149,4 @@ module.exports.doLogout = (request, reply) => {
   request.cookieAuth.clear()
 
   reply.redirect(config.AUTH_LOGOUT_URL)
-
 }
