@@ -8,7 +8,10 @@ const repackBrreg = require('../lib/repack-brreg')
 const repackKontaktinfo = require('../lib/repack-kontaktinfo')
 
 module.exports.showFrontpage = (request, reply) => {
+  const yar = request.yar
+  const inProgress = yar.get('inProgress') || ''
   const viewOptions = {
+    inProgress: inProgress,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -20,7 +23,10 @@ module.exports.showFrontpage = (request, reply) => {
 }
 
 module.exports.showKontaktpage = (request, reply) => {
+  const yar = request.yar
+  const inProgress = yar.get('inProgress') || ''
   const viewOptions = {
+    inProgress: inProgress,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -32,7 +38,10 @@ module.exports.showKontaktpage = (request, reply) => {
 }
 
 module.exports.showPersonvernpage = (request, reply) => {
+  const yar = request.yar
+  const inProgress = yar.get('inProgress') || ''
   const viewOptions = {
+    inProgress: inProgress,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -44,7 +53,10 @@ module.exports.showPersonvernpage = (request, reply) => {
 }
 
 module.exports.showTilskuddpage = (request, reply) => {
+  const yar = request.yar
+  const inProgress = yar.get('inProgress') || ''
   const viewOptions = {
+    inProgress: inProgress,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -56,7 +68,10 @@ module.exports.showTilskuddpage = (request, reply) => {
 }
 
 module.exports.showIkkefunnetpage = (request, reply) => {
+  const yar = request.yar
+  const inProgress = yar.get('inProgress') || ''
   const viewOptions = {
+    inProgress: inProgress,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -68,7 +83,10 @@ module.exports.showIkkefunnetpage = (request, reply) => {
 }
 
 module.exports.showOrganisasjonsnummerpage = (request, reply) => {
+  const yar = request.yar
+  const inProgress = yar.get('inProgress') || ''
   const viewOptions = {
+    inProgress: inProgress,
     version: pkg.version,
     versionName: pkg.louie.versionName,
     versionVideoUrl: pkg.louie.versionVideoUrl,
@@ -114,6 +132,7 @@ module.exports.start = (request, reply) => {
       data: data
     })
 
+    yar.set('inProgress', true)
     yar.set('validatedContactInfo', false)
     yar.set('organisasjon', repackBrreg(data.brregData))
     yar.set('kontaktperson', repackKontaktinfo(data))
@@ -123,13 +142,12 @@ module.exports.start = (request, reply) => {
 }
 
 module.exports.doLogout = (request, reply) => {
-  const viewOptions = {
-    version: pkg.version,
-    versionName: pkg.louie.versionName,
-    versionVideoUrl: pkg.louie.versionVideoUrl,
-    systemName: pkg.louie.systemName,
-    githubUrl: pkg.repository.url
-  }
+  const yar = request.yar
 
-  reply.view('index', viewOptions)
+  yar.reset()
+
+  request.cookieAuth.clear()
+
+  reply.redirect(config.AUTH_LOGOUT_URL)
+
 }

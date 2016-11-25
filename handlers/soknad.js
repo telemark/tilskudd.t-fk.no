@@ -62,7 +62,9 @@ module.exports.getPreviousStep = (request, reply) => {
 module.exports.getPartOrganisasjon = (request, reply) => {
   const yar = request.yar
   const data = yar.get('organisasjon') || {}
+  const inProgress = yar.get('inProgress')
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
@@ -79,8 +81,10 @@ module.exports.getPartOrganisasjon = (request, reply) => {
 module.exports.getPartKontaktperson = (request, reply) => {
   const yar = request.yar
   const data = yar.get('kontaktperson') || {}
+  const inProgress = yar.get('inProgress')
   yar.set('validatedContactInfo', true)
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
@@ -97,7 +101,9 @@ module.exports.getPartKontaktperson = (request, reply) => {
 module.exports.getPartFormal = (request, reply) => {
   const yar = request.yar
   const data = yar.get('formal') || {}
+  const inProgress = yar.get('inProgress')
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
@@ -114,7 +120,9 @@ module.exports.getPartFormal = (request, reply) => {
 module.exports.getPartTarget = (request, reply) => {
   const yar = request.yar
   const data = yar.get('target') || {}
+  const inProgress = yar.get('inProgress')
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
@@ -131,7 +139,9 @@ module.exports.getPartTarget = (request, reply) => {
 module.exports.getPartCollaboration = (request, reply) => {
   const yar = request.yar
   const data = yar.get('collaboration') || {}
+  const inProgress = yar.get('inProgress')
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
@@ -148,7 +158,9 @@ module.exports.getPartCollaboration = (request, reply) => {
 module.exports.getPartSamarbeidsparter = (request, reply) => {
   const yar = request.yar
   const data = yar.get('samarbeidsparter') || {}
+  const inProgress = yar.get('inProgress')
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
@@ -165,7 +177,9 @@ module.exports.getPartSamarbeidsparter = (request, reply) => {
 module.exports.getPartArtform = (request, reply) => {
   const yar = request.yar
   const data = yar.get('artform') || {}
+  const inProgress = yar.get('inProgress')
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
@@ -181,6 +195,7 @@ module.exports.getPartArtform = (request, reply) => {
 
 module.exports.getPartKategorier = (request, reply) => {
   const yar = request.yar
+  const inProgress = yar.get('inProgress')
   const artform = yar.get('artform')
   const formal = yar.get('formal')
   const isFolkehelse = /folkehelse/.test(formal.formal)
@@ -188,6 +203,7 @@ module.exports.getPartKategorier = (request, reply) => {
   const data = yar.get('kategorier') || {}
   const categories = getCategories(categoryType)
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
@@ -204,8 +220,10 @@ module.exports.getPartKategorier = (request, reply) => {
 
 module.exports.getPartPartners = (request, reply) => {
   const yar = request.yar
+  const inProgress = yar.get('inProgress')
   const data = yar.get('partners') || {}
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
@@ -222,7 +240,9 @@ module.exports.getPartPartners = (request, reply) => {
 module.exports.getPartTiltak = (request, reply) => {
   const yar = request.yar
   const data = yar.get('tiltak') || {}
+  const inProgress = yar.get('inProgress')
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
@@ -239,7 +259,9 @@ module.exports.getPartTiltak = (request, reply) => {
 module.exports.getPartBidrag = (request, reply) => {
   const yar = request.yar
   const data = yar.get('bidrag') || {}
+  const inProgress = yar.get('inProgress')
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
@@ -255,8 +277,10 @@ module.exports.getPartBidrag = (request, reply) => {
 
 module.exports.getPartSeover = (request, reply) => {
   const yar = request.yar
+  const inProgress = yar.get('inProgress')
   const document = prepareSoknad(request)
   const viewOptions = {
+    inProgress: inProgress,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
     versionName: pkg.louie.versionName,
@@ -273,7 +297,9 @@ module.exports.getPartSeover = (request, reply) => {
 module.exports.getPartFinanser = (request, reply) => {
   const yar = request.yar
   const data = yar.get('finanser') || {}
+  const inProgress = yar.get('inProgress')
   const viewOptions = {
+    inProgress: inProgress,
     data: data,
     crumbs: generateBreadCrumbs(yar._store),
     version: pkg.version,
