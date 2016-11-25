@@ -1,7 +1,7 @@
 [
   {
     "id": "organisasjon",
-    "name": "Organisasjonen"
+    "name": "Organisasjon"
   },
   {
     "id": "kontaktperson",
@@ -9,7 +9,7 @@
   },
   {
     "id": "formal",
-    "name": "Tilskuddsordning"
+    "name": "Ordning"
   },
   {
     "id": "artform",
@@ -25,7 +25,7 @@
   },
   {
     "id": "tiltak",
-    "name": "Tiltaket"
+    "name": "Tiltak"
   },
   {
     "id": "collaboration",
@@ -33,11 +33,11 @@
   },
   {
     "id": "partners",
-    "name": "Partners"
+    "name": "Partnere"
   },
   {
     "id": "samarbeidsparter",
-    "name": "Samarbeidsparter"
+    "name": "Navn"
   },
   {
     "id": "finanser",
@@ -46,9 +46,5 @@
   {
     "id": "bidrag",
     "name": "Bidrag"
-  },
-  {
-    "id": "seover",
-    "name": "Se over"
   }
 ]
