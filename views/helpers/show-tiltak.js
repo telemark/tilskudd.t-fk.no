@@ -39,14 +39,14 @@ module.exports = (document) => {
   output.push(`Periode: ${tiltak.startdato} - ${tiltak.sluttdato}`)
   output.push(`Frekvens: ${tiltak.antall}`)
   output.push(`Sted: ${tiltak.hvor}`)
-
-  output.push('<h3>Økonomi</h3>')
+  output.push('')
+  output.push('<strong>Økonomi</strong>')
   output.push(`Søkebeløp: ${finanser.soknadsSum}`)
   output.push(`Total kostnadsramme: ${finanser.totalRamme}`)
   output.push(`Egne midler: ${finanser.egneMidler}`)
   output.push(`Andre midler (søkt om eller innvilget): ${finanser.andreMidler}`)
-
-  output.push('<h3>Samarbeidsparter</h3>')
+  output.push('')
+  output.push('<strong>Samarbeidsparter</strong>')
   if (document.collaboration.samarbeid === 'ja') {
     if (document.partners && document.partners.partner) {
       if (Array.isArray(document.partners.partner)) {
