@@ -1,26 +1,33 @@
 'use strict'
 
-var button = document.getElementById('nextButton')
-var inputs = document.getElementsByTagName('input')
-var checkboxes = []
+function init () {
+  var button = document.getElementById('nextButton')
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]')
 
-Object.keys(inputs).forEach(function (objKey) {
-  var input = inputs[objKey]
-  if (input.type === 'checkbox' && checkboxes.indexOf(input) === -1) {
-    checkboxes.push(input)
-    input.addEventListener('click', function (e) {
+  Array.prototype.forEach.call(checkboxes, function (el) {
+    el.addEventListener('click', function (e) {
       inputOk()
     })
-  }
-})
-
-function inputOk () {
-  button.disabled = true
-  checkboxes.forEach(function (box) {
-    if (box.checked === true) {
-      button.disabled = false
-    }
   })
+
+  function inputOk () {
+    button.disabled = true
+    Array.prototype.forEach.call(checkboxes, function (box) {
+      if (box.checked === true) {
+        button.disabled = false
+      }
+    })
+  }
+
+  inputOk()
 }
 
-inputOk()
+function ready (fn) {
+  if (document.readyState != 'loading') {
+    fn ()
+  } else {
+    document.addEventListener('DOMContentLoaded', fn)
+  }
+}
+
+ready(init)
