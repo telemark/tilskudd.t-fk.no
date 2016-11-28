@@ -18,7 +18,6 @@ module.exports = [
     path: '/next',
     handler: handler.getNextStep,
     config: {
-      auth: false,
       security: true,
       description: 'Show next step'
     }
@@ -28,7 +27,6 @@ module.exports = [
     path: '/next',
     handler: handler.getNextStep,
     config: {
-      auth: false,
       security: true,
       description: 'Show next step'
     }
@@ -38,7 +36,6 @@ module.exports = [
     path: '/previous',
     handler: handler.getPreviousStep,
     config: {
-      auth: false,
       security: true,
       description: 'Show previous step'
     }
@@ -48,7 +45,6 @@ module.exports = [
     path: '/organisasjon',
     handler: handler.getPartOrganisasjon,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for organization'
     }
@@ -58,7 +54,6 @@ module.exports = [
     path: '/kontaktperson',
     handler: handler.getPartKontaktperson,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for contactperson'
     }
@@ -68,7 +63,6 @@ module.exports = [
     path: '/formal',
     handler: handler.getPartFormal,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for formal'
     }
@@ -78,7 +72,6 @@ module.exports = [
     path: '/target',
     handler: handler.getPartTarget,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for target'
     }
@@ -88,7 +81,6 @@ module.exports = [
     path: '/collaboration',
     handler: handler.getPartCollaboration,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for collaboration'
     }
@@ -98,7 +90,6 @@ module.exports = [
     path: '/samarbeidsparter',
     handler: handler.getPartSamarbeidsparter,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for samarbeidsparter'
     }
@@ -108,7 +99,6 @@ module.exports = [
     path: '/artform',
     handler: handler.getPartArtform,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for artform'
     }
@@ -118,7 +108,6 @@ module.exports = [
     path: '/kategorier',
     handler: handler.getPartKategorier,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for kategorier'
     }
@@ -128,7 +117,6 @@ module.exports = [
     path: '/partners',
     handler: handler.getPartPartners,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for partners'
     }
@@ -138,7 +126,6 @@ module.exports = [
     path: '/finanser',
     handler: handler.getPartFinanser,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for finanser'
     }
@@ -148,7 +135,6 @@ module.exports = [
     path: '/tiltak',
     handler: handler.getPartTiltak,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for tiltak'
     }
@@ -158,7 +144,6 @@ module.exports = [
     path: '/bidrag',
     handler: handler.getPartBidrag,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for bidrag'
     }
@@ -168,7 +153,6 @@ module.exports = [
     path: '/seover',
     handler: handler.getPartSeover,
     config: {
-      auth: false,
       security: true,
       description: 'Show part for seover'
     }
@@ -198,7 +182,6 @@ module.exports = [
     path: '/submit',
     handler: handler.doSubmit,
     config: {
-      auth: false,
       security: true,
       description: 'Submit'
     }
