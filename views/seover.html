@@ -14,8 +14,10 @@
         </fieldset>
         {{{show-breadcrumbs crumbs}}}
         <div class="expanded button-group">
-            <a href="/cleanup" title="Avbryt søknaden" class="alert button">Avbryt søknaden</a>
+            <a href="/cleanup" title="Avbryt søknaden" id="cancelButton" class="alert button">Avbryt søknaden</a>
             <button type="submit" title="Send inn søknaden" class="primary button">Send inn søknaden</button>
         </div>
     </form>
 </div>
+
+<script defer src="public/js/warn-if-cancel.js"></script>
