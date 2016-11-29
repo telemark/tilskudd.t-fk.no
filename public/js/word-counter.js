@@ -1,13 +1,25 @@
 'use strict'
 
-const totalChars = 1000
-const textField = document.getElementById('beskrivelse')
-const tegnIgjen = document.getElementById('tegnIgjen')
+function init () {
+  var totalChars = 1000
+  var textField = document.getElementById('beskrivelse')
+  var tegnIgjen = document.getElementById('tegnIgjen')
 
-const updateCount = () => {
-  tegnIgjen.textContent = totalChars - textField.value.length
+  function updateCount () {
+    tegnIgjen.textContent = totalChars - textField.value.length
+  }
+
+  textField.addEventListener('input', updateCount)
+
+  updateCount()
 }
 
-textField.addEventListener('input', updateCount)
+function ready (fn) {
+  if (document.readyState != 'loading') {
+    fn ()
+  } else {
+    document.addEventListener('DOMContentLoaded', fn)
+  }
+}
 
-updateCount()
+ready(init)
