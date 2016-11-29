@@ -1,7 +1,7 @@
 'use strict'
 
-const idSite = 5
-const piwikTrackingApiUrl = 'https://piwik.service.t-fk.no/piwik.php';
+var idSite = 5
+var piwikTrackingApiUrl = 'https://piwik.service.t-fk.no/piwik.php';
 
 var _paq = _paq || []
 _paq.push(['setTrackerUrl', piwikTrackingApiUrl])
