@@ -27,7 +27,7 @@ const meshOptions = {
 }
 
 const blankieOptions = {
-  styleSrc: ['https://fonts.googleapis.com', 'https://code.getmdl.io', 'self'],
+  styleSrc: ['https://fonts.googleapis.com', 'https://code.getmdl.io', 'unsafe-inline', 'self'],
   fontSrc: 'https://fonts.gstatic.com self',
   scriptSrc: ['self', 'https://code.getmdl.io', 'https://piwik.service.t-fk.no'],
   imgSrc: ['self', 'data:', 'https://piwik.service.t-fk.no'],
