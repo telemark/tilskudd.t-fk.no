@@ -58,3 +58,12 @@ a.logo-link {
     background-color: #e30438;
     color: white;
 }
+
+.logo {
+    padding: 10px;
+}
+
+.title-bar {
+    background-color: #ffd520;
+    color: black;
+}
