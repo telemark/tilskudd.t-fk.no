@@ -65,7 +65,7 @@
     "inert": "4.2.1",
     "jsonwebtoken": "7.4.2",
     "scooter": "4.0.0",
-    "seneca": "3.4.0",
+    "seneca": "3.4.2",
     "seneca-balance-client": "0.6.1",
     "seneca-mesh": "0.10.0",
     "simple-encryptor": "1.1.0",
