@@ -71,7 +71,7 @@
     "simple-encryptor": "1.1.0",
     "tfk-seneca-queue-mongodb": "1.0.8",
     "vision": "4.1.1",
-    "wreck": "12.3.0",
+    "wreck": "12.4.0",
     "yar": "8.1.2"
   }
 }
